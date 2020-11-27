@@ -1,0 +1,16 @@
+{
+  "id": "2220499",
+  "name": "遇TA",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1089283",
+      "name": "我",
+      "font_class": "buoumaotubiao03",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}
