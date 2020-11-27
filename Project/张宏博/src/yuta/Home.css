@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrap{
+    width: 100%;
+    height: 660px;
+    background-image: url(./imgs/bgimg.jpg);
+    background-repeat: no-repeat;
+}
+#nav{
+    position: absolute;
+    top: 25px;
+    left: 310px;
+    width: 40px;
+    height: 40px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border:1px solid white;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+}
+#love{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    z-index: 2;
+}
+#diary{
+    width: 55px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    left: 17px;
+    border-radius: 8px;
+    background-color: white;
+    display: inline-block; 
+} 
+#diary>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#diary>p{
+    margin-top: 10px;
+    text-align: center;
+    font-size:11px;
+}
+#talk{
+    width: 55px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    left: 87px;
+    border-radius: 8px;
+    background-color: white;
+    display: inline-block; 
+} 
+#talk>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#talk>p{
+    margin-top: 10px;
+    text-align: center;
+    font-size:11px;
+}
+
+#sweet{
+    width: 55px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    left: 157px;
+    border-radius: 8px;
+    background-color: white;
+    display: inline-block; 
+}
+#sweet>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#sweet>p{
+    margin-top: 10px;
+    text-align: center;
+    font-size:11px;
+}
+
+#commemorate{
+    width: 55px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    left: 227px;
+    border-radius: 8px;
+    background-color: white;
+    display: inline-block; 
+}
+#commemorate>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#commemorate>p{
+    margin-top: 10px;
+    text-align: center;
+    font-size:11px;
+}
+
+#things{
+    width: 55px;
+    height: 70px;
+    position: absolute;
+    top: 500px;
+    left: 297px;
+    border-radius: 8px;
+    background-color: white;
+    display: inline-block; 
+}
+#things>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#things>p{
+    margin-top: 10px;
+    text-align: center;
+    font-size:11px;
+}

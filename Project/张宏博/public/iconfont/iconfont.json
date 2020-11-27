@@ -1,0 +1,51 @@
+{
+  "id": "2221629",
+  "name": "yuta",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3920026",
+      "name": "首页",
+      "font_class": "wemen",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6463408",
+      "name": "社区",
+      "font_class": "shequ",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "9138861",
+      "name": "社区",
+      "font_class": "shequ1",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "14000454",
+      "name": "社区",
+      "font_class": "women1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14362078",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "14983741",
+      "name": "我的",
+      "font_class": "wode1",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    }
+  ]
+}
