@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#all2{
+    background: url(../imgs/daka.jpeg);  
+    height: 100%;  
+}
+#nav2{
+    height:50px;
+    width:100%;
+}
+#da1>img{   
+    height:15px;
+    width:15px;
+}
+#da1{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left:10px;
+}
+#text1{
+    display: inline-block;
+    color:#E5A3A3;
+    font-size: 18px;
+    position: relative;
+    left:40px;
+    font-weight:bold;
+}
+#text2{
+    display: inline-block;
+    color:#E5A3A3;
+    font-size: 18px;
+    position: relative;
+    left:230px;
+    font-weight:bold;
+}
+#body{
+    margin-top:30px;
+}
+#textarea{
+    background-color:white;
+    width:80%;
+    margin:0 auto;
+}
+#body-xia{
+    height:50px;
+    margin-top: 20px;
+}
+#biaoqing{
+    margin-left:240px;
+    display: inline-block;
+}
+#biaoqing>img{
+    height:30px;
+    width:30px;
+}
+#tupian{
+    margin-left:30px;
+    display: inline-block;
+}
+#tupian>img{
+    height:30px;
+    width:30px;
+}
