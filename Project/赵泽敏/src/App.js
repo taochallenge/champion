@@ -7,8 +7,11 @@ import {RouteWithSubRoutes} from './shequ/RouteWithSubRoutes';
 import routes from './shequ/router.config';
 import Tui from './shequ/Tui';
 import Guan from './shequ/Guan';
+import { Provider } from 'react-redux';
+import store from './shequ/store';
 const App = ()=>{
-	return <Router>
+	return <Provider store={store}>
+	<Router>
 		<Switch>
 		{
 			routes.map((route) => (
@@ -18,6 +21,7 @@ const App = ()=>{
 		</Switch>
 		{/* <Mytab/> */}
 	</Router>
+	</Provider>
 }
 
 export default App;

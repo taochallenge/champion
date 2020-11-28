@@ -4,7 +4,9 @@
     text-decoration: none;
 }
 #all{
-    background: url(../imgs/bg5.jpg);  
+    /* background: url(../imgs/bg5.jpg);   */
+    /* background-color: #E5A3A3;
+    height: 100%; */
 }
 #nav{
     width:100%;

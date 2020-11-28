@@ -6,8 +6,6 @@ import Write from './Write';
 import Zhong from './Zhong';
 import Shou from './Shou';
 import Xian from './Xian';
-
-
 const routes = [
     {
         path:'/Shequ',

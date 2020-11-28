@@ -1,24 +1,26 @@
 import React from 'react'
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import { RouteWithSubRoutes } from './RouteWithSubRoutes';
 import './User.css'
-const User = ({routes},props) => {
+const User = ({routes}) => {
     return (
-        <div id='all1'>
+        
+        <div>
             {
-                    routes.map((route) => (
-                        <RouteWithSubRoutes  {...route} />
-                    ))
-                }
-
-
-                <Redirect from='/User' to='/User/Zhong' />
+                routes.map((route) => (
+                    <RouteWithSubRoutes  {...route} />
+                ))
+            }
+            <Redirect from='/User' to='/User/Zhong' />
+            <div id='all1'>
+            
             <div id='nav1'>
-                <div id='da'
-                onClick={ () => {
-                    props.history.push('/Shequ');
-                } }
-                ><img src={require('../imgs/jiantou.png')}/></div>
+                
+                <NavLink to='/Shequ'>
+                    <div id='da'>
+                    <img src={require('../imgs/jiantou.png')}/>
+                    </div>
+                </NavLink>
                 <div id='text'>我</div>
             </div>
             <div id='body1'>
@@ -46,8 +48,9 @@ const User = ({routes},props) => {
                     <NavLink to='/User/Xian'><div id='xian'>羡慕的树</div></NavLink>
                 </div>
             </div>
+            </div>
         </div>
     )
 }
 
-export default User
+export default withRouter(User)

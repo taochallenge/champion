@@ -25,3 +25,85 @@
     display: inline-block;
     background-color: white;
 }
+#kuai{
+    width:90%;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    background-color: white;
+    
+}
+#kuai-img>img{
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#kuai-img{
+    display: inline-block;
+    margin-top:10px;
+    margin-left:5px
+}
+#kuai-username{
+    display: inline-block;
+    color:#E5A3A3;
+    font-size:18px;
+    font-weight:bold;
+    position: relative;
+    top:-40px;
+    left:20px;
+}
+#kuai-time{
+    display: inline-block;
+    color:#323030;
+    font-size:14px;
+    position: relative;
+    top:-15px;
+    left:-16px;
+}
+#kuai-qipao{
+    display: inline-block;
+    position: relative;
+    top:-30px;
+    left:140px;
+}
+#kuai-qipao>img{
+    height:30px;
+    width:30px;
+}
+#val1{
+    height:30px;
+    width: 90%;
+    margin:0 auto;
+}
+#xianmu>img{
+    width:30px;
+    height: 30px;
+}
+#pinglun>img{
+    width:30px;
+    height: 30px;
+}
+#xianmu{
+    display: inline-block;
+    position: relative;
+    left:30px;
+}
+#xianmu-txt{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:40px;
+}
+
+#pinglun{
+    display: inline-block;
+    position: relative;
+    left:110px;
+}
+#pinglun-txt{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:120px;
+}
