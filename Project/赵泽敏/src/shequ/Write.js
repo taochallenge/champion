@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './write.css'
-import {getDate} from './actionCreator'
 import { connect } from 'react-redux';
 
 class Write extends Component {
@@ -15,15 +14,15 @@ class Write extends Component {
         this.setState({inpValue:e.target.value});
     }
     componentDidMount(){
-        let inpValue = localStorage.getItem('inpValue');
-        if(inpValue){
+        let todos = localStorage.getItem('todos');
+        if(todos){
             this.setState({
-                inpValue:JSON.parse(inpValue)
+                inpValue:JSON.parse(todos)
             })
         }
     }
     componentDidUpdate(){
-        localStorage.setItem('inpValue',JSON.stringify(this.state.inpValue))
+        localStorage.setItem('todos',JSON.stringify(this.state.todos))
     }
     addTodo=()=>{
         if(this.state.inpValue==''){
@@ -40,18 +39,19 @@ class Write extends Component {
         })
         this.setState({inpValue:''})
     }
-    renderTodos=()=>{
-       return this.state.todos.map((todo)=>{                                     
-            return <div>
-                <span dangerouslySetInnerHTML={{__html:todo.title}}></span>               
-            </div>
+    // renderTodos=()=>{
+    //    return this.state.todos.map((todo)=>{                                     
+    //         return <div>
+    //             <span dangerouslySetInnerHTML={{__html:todo.title}}></span>               
+    //         </div>
                                     
-        })
-    }
-    render() {       
+    //     })
+    // }
+    render() {  
+        const {todos,inpValue}=this.state;      
         return (
          <div id='all2'>
-            <div id='nav2'>
+            <div id='nav2' style={{whiteSpace:'pre-wrap'}}>
                 <div id='da1'>
                     <img
                         src={require('../imgs/jiantou1.png')}
@@ -62,13 +62,13 @@ class Write extends Component {
                 </div>
                 <div id='text1'>种棵树</div>
 
-                <div id='text2'                
+                <div id='text2'       
                     onClick={()=>{
                         this.props.history.push({
                             pathname:'/Shequ',
                         })
                         this.props.dispatch({
-                            type:'GETDATA',
+                            type:'GETTREES',
                             list: this.state.inpValue
                         })
                         
@@ -85,12 +85,13 @@ class Write extends Component {
                     value={this.inpValue}
                     onChange={this.handleChange}                    
                     addTodo = {this.addTodo}
+                    
                     ></textarea>
-                    <div>                
+                    {/* <div>                
                         {
                             this.renderTodos()
                         }
-                    </div>
+                    </div> */}
                 </div>
                 <div id='body-xia'>
                     <div id='biaoqing'>

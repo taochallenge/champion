@@ -9,6 +9,7 @@
     position: fixed;
     top:0;
     left: 0;
+    width:100%;
 }
 #nav1{
     height:50px;
@@ -58,14 +59,15 @@
 }
 #gzs{
     display: inline-block;
+    margin-left: 20px;
 }
 #fss{
     display: inline-block;
-    margin-left: 32px;
+    margin-left: 48px;
 }
 #xms{
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 #txt{
     position: relative;
@@ -77,15 +79,15 @@
 }
 #gz{
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 #fs{
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 35px;
 }
 #xm{
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 35px;
 }
 #write{
     height:28px;
@@ -94,7 +96,7 @@
     display: inline-block;
     position: relative;
     top:-25px;
-    left:-60px;
+    left:-20px;
     border-radius: 18px;
     text-align: center;
 }

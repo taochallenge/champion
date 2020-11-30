@@ -2,7 +2,7 @@
 let data = []
 
 function datasreducer(state=data,action){
-    if(action.type=='GETDATA'){
+    if(action.type=='GETTREES'){
         return [...state,action.list]
     }
     return state;
