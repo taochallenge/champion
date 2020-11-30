@@ -5,24 +5,18 @@ const Tree = () => {
     return (
         <div class='wrapUsers'>
             <div class='mainRightUsers'>
-                <table border="1">
-                    <tr>
-                        <th>账号</th>
-                        <th>密码</th>
-                        <th>电话</th>
-                        <th>操作</th>
-                        <th></th>
-
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+            <table width='1200px' rules='rows'>
+                <tr bgcolor='#E6E6E6'>
+                    <th>种树编号</th>
+                    <th>种树内容</th>
+                    <th>种树图片路径</th>
+                    <th>相恋天数</th>
+                    <th>羡慕人数</th>
+                    <th>是否被收藏</th>
+                    <th>种树时间</th>
+                    <th>种树创作者</th>
+                </tr>
+            </table>
             </div>
         </div>
     )

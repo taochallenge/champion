@@ -1,11 +1,16 @@
 import React from 'react'
 import './users.css'
+import getUsers from '../GetData/getUsers'
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Users = () => {
+const Users = (props) => {
+    props.dispatch(getUsers())
     return (
         <div class='wrapUsers'>
             <div class='mainUsers'>
                     <table width='1200px' rules='rows'>
+                        <thead>
                         <tr bgcolor='#E6E6E6'>
                             <th>用户编号</th>
                             <th>用户昵称</th>
@@ -20,202 +25,35 @@ const Users = () => {
                             <th>用户密码</th>
                             <th>操作</th>
                         </tr>
-                        <tr align='center'>
-                            <td>1</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>2</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>3</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>4</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>5</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>6</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>7</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>8</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>9</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>10</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>11</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
-                        <tr align='center'>
-                            <td>12</td>
-                            <td>啊啊啊</td>
-                            <td>女</td>
-                            <td>20</td>
-                            <td>北京市</td>
-                            <td>2000.11.11</td>
-                            <td>2018.10.10</td>
-                            <td>456789</td>
-                            <td>12345678912</td>
-                            <td>1</td>
-                            <td>123456</td>
-                            <td>
-                                <button>删除</button>
-                            </td>
-                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            props.users.map((user,index)=> {
+                                return (
+                                    <tr align='center' key={index} >
+                                        <td>{user.id}</td>
+                                        <td>{user.myname}</td>
+                                        <td>{user.sex}</td>
+                                        <td>{user.age}</td>
+                                        <td>{user.location}</td>
+                                        <td>{user.birthday}</td>
+                                        <td>{user.location}</td>
+                                        <td>{user.secret}</td>
+                                        <td>{user.tel}</td>
+                                        <td>{user.sex}</td>
+                                        <td>{user.password}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
                     </table>
             </div>
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+    users: state.users,
+})
 
-export default Users
+export default connect(mapStateToProps)(withRouter(Users));

@@ -5,23 +5,14 @@ const Little = () => {
     return (
         <div class='wrapUsers'>
             <div class='mainRightUsers'>
-                <table border="1">
-                    <tr>
-                        <th>账号</th>
-                        <th>密码</th>
-                        <th>电话</th>
-                        <th>操作</th>
-                        <th></th>
-
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
+            <table width='1200px' rules='rows'>
+                <tr bgcolor='#E6E6E6'>
+                    <th>小事编号</th>
+                    <th>小事名字</th>
+                    <th>小事图片路径</th>
+                    <th>小事完成状态</th>
+                    <th>小事时间</th>
+                </tr>
                 </table>
             </div>
         </div>

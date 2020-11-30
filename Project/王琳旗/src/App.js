@@ -1,6 +1,8 @@
 import React from 'react';
 import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
 import routes from './yuTA/router';
+import store from './yuTA/store';
+import { Provider } from 'react-redux';
 
 function RouteWithSubRoutes(route) {
 	return (
@@ -15,15 +17,17 @@ function RouteWithSubRoutes(route) {
 	);
 }
 const App =()=>{
-	return <Router>
-		<Switch>
-		{
-			routes.map((route) => (
-				<RouteWithSubRoutes {...route}/>
-		  	))
-		}
-		</Switch>
-	</Router>
+	return <Provider store={store}>
+		<Router>
+			<Switch>
+			{
+				routes.map((route) => (
+					<RouteWithSubRoutes {...route}/>
+		  		))
+			}
+			</Switch>
+		</Router> 
+	</Provider>
 }
 
 export {App,RouteWithSubRoutes};

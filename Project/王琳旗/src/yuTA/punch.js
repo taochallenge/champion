@@ -5,24 +5,13 @@ const Punch = () => {
     return (
         <div class='wrapUsers'>
             <div class='mainRightUsers'>
-                <table border="1">
-                    <tr>
-                        <th>账号</th>
-                        <th>密码</th>
-                        <th>电话</th>
-                        <th>操作</th>
-                        <th></th>
-
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+            <table width='1200px' rules='rows'>
+                <tr bgcolor='#E6E6E6'>
+                    <th>打卡人编号</th>
+                    <th>打卡人时间</th>
+                    <th>打卡人总天数</th>
+                </tr>
+            </table>
             </div>
         </div>
     )

@@ -5,24 +5,17 @@ const Collection = () => {
     return (
         <div class='wrapUsers'>
             <div class='mainRightUsers'>
-                <table border="1">
-                    <tr>
-                        <th>账号</th>
-                        <th>密码</th>
-                        <th>电话</th>
-                        <th>操作</th>
-                        <th></th>
-
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+            <table width='1200px' rules='rows'>
+                <tr bgcolor='#E6E6E6'>
+                    <th>收藏树编号</th>
+                    <th>收藏树内容</th>
+                    <th>收藏树图片路径</th>
+                    <th>相恋天数</th>
+                    <th>羡慕人数</th>
+                    <th>收藏树时间</th>
+                    <th>收藏树者</th>
+                </tr>
+            </table>
             </div>
         </div>
     )
