@@ -1,4 +1,4 @@
-const getTrees = (list)=>{
+const getTrees = ()=>{
     return (dispatch)=>{
         let url = '/tree';
         fetch(url, {
@@ -12,6 +12,25 @@ const getTrees = (list)=>{
             dispatch({
                 type: 'GETTREES',
                 list: res
+            })
+        })
+    }
+}
+
+const getUsers = ()=>{
+    return (dispatch)=>{
+        let url = '/user';
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(res => res.json())
+        .then(res => {
+            dispatch({
+                type: 'GETUSERS',
+                ulist: res
             })
         })
     }
@@ -54,4 +73,4 @@ const xianmu = (xmlist)=>{
     }
 }
 
-export {getTrees,shoucang,xianmu}
+export {getTrees,getUsers,shoucang,xianmu}
