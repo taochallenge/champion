@@ -2,7 +2,7 @@ let data=[]
 const usersReducer = (state=data,action)=>{
     switch(action.type){
         case 'GETUSERS':
-            return action.users
+            return action.userslist
         default:
             return state;
         

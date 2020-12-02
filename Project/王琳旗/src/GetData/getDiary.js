@@ -1,15 +1,15 @@
-const getUsers = (userslist) => {
+const getDiary = (diarylist) => {
     return (dispatch) => {
-        let url = '/user';
+        let url = '/diaries';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETUSERS',
-                userslist: res
+                type: 'GETDIARY',
+                diarylist: res
             })
         })
     }
 }
 
-export default getUsers
+export default getDiary

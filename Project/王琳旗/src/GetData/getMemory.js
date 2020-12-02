@@ -1,15 +1,15 @@
-const getUsers = (userslist) => {
+const getMemory = (memorylist) => {
     return (dispatch) => {
-        let url = '/user';
+        let url = '/memory';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETUSERS',
-                userslist: res
+                type: 'GETMEMORY',
+                memorylist: res
             })
         })
     }
 }
 
-export default getUsers
+export default getMemory
