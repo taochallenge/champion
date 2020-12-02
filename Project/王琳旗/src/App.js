@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
+import {HashRouter as Router,Route,Switch} from 'react-router-dom'
 import routes from './yuTA/router';
 import store from './yuTA/store';
 import { Provider } from 'react-redux';

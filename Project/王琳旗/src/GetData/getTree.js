@@ -1,15 +1,15 @@
-const getUsers = (userslist) => {
+const getTree = (treelist) => {
     return (dispatch) => {
-        let url = '/user';
+        let url = '/tree';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETUSERS',
-                userslist: res
+                type: 'GETTREE',
+                treelist: res
             })
         })
     }
 }
 
-export default getUsers
+export default getTree

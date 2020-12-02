@@ -1,26 +1,10 @@
 import React from 'react'
 import './users.css'
 
-// let listaddmire= this.state.list.map((user,index)=> {
-//     return (
-//      <tr key={index}>
-//        <td>{user.id}</td>
-//        <td>{user.myname}</td>
-//        <td>{user.age}</td>
-//        <td>{user.location}</td>
-//        <td>{user.birthday}</td>
-//        <td>{user.lovedata}</td>
-//        <td>{user.secret}</td>
-//        <td>{user.tel}</td>
-//        <td>{user.state}</td>
-//        <td>{user.password}</td>
-//    </tr>
-//  )
-// });
 const Admire = () => {
     return (
-        <div class='wrapUsers'>
-            <div class='mainRightUsers'>
+        <div className='wrapUsers'>
+            <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
                 <thead>
                 <tr bgcolor='#E6E6E6'>
