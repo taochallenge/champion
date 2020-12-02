@@ -2,9 +2,10 @@ import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
 import list from './datasreducer';
 import sclist from './shoucangreducer';
 import xmlist from './xianmureducer';
+import ulist from './usersreducer';
 
 let rootReducer = combineReducers({
-    list,sclist,xmlist
+    list,sclist,xmlist,ulist
 })
 
 function logger({ getState }) {

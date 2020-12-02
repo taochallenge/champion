@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { createBrowserHistory } from 'history';
 import '../login/login.css';
 import './register.css';
 export default class Register extends Component {
+  registerback() {
+    let history = createBrowserHistory();
+    history.push('/login');
+    history.go();
+  }
 
   render() {
     return (
@@ -13,7 +19,7 @@ export default class Register extends Component {
             <input type='password' className="reg-input none-default" placeholder="请输入密码"></input>
             <input type='password' className="reg-input none-default" placeholder="请再次输入密码"></input>
           </div>
-          <button className="reg-btn none-default">注册</button>
+          <button className="reg-btn none-default" onClick={this.registerback}>注册</button>
         </div>
       </div>
     )
