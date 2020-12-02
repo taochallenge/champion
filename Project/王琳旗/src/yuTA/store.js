@@ -1,23 +1,17 @@
 import {createStore,combineReducers,applyMiddleware,compose} from 'redux';
-import users from '../Reduders/usersReducer';;
+import userslist from '../Reduders/usersReducer';
+import centencelist from '../Reduders/centenceReducer';
+import diarylist from '../Reduders/diaryReducer';
+import littlelist from '../Reduders/littleReducer';
+import memorylist from '../Reduders/memoryReducer';
+import treelist from '../Reduders/treeReducer';
+
 
 let rootReducer = combineReducers({
-    users
+    userslist,centencelist,diarylist,littlelist,memorylist,treelist
 })
 
-function logger({getState}){
-    return (next)=>(action)=>{
-        console.log('will dispatch',action)
-        //调用middleware链中下一个middleware的dispatch
-        let returnvalue=next(action)
-        console.log('state after dispatch',getState())
-        //一般会是action本身，除非后面的middleware修改了他
-        return returnvalue
-    }
-}
-
 const thunk = ({ dispatch, getState }) => (next) => (action) => {
-    console.log(thunk);
     if (typeof action === 'function') {
       return action(dispatch, getState);
     }

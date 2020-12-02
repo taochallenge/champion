@@ -1,15 +1,15 @@
-const getUsers = (userslist) => {
+const getLittle = (littlelist) => {
     return (dispatch) => {
-        let url = '/user';
+        let url = '/little';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETUSERS',
-                userslist: res
+                type: 'GETLITTLE',
+                littlelist: res
             })
         })
     }
 }
 
-export default getUsers
+export default getLittle

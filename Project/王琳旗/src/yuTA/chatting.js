@@ -3,8 +3,8 @@ import './users.css'
 
 const Chatting = () => {
     return (
-        <div class='wrapUsers'>
-            <div class='mainRightUsers'>
+        <div className='wrapUsers'>
+            <div className='mainRightUsers'>
                 <table width='1200px' rules='rows'>
                     <tr bgcolor='#E6E6E6'>
                         <th>记录编号</th>

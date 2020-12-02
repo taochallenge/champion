@@ -27,7 +27,7 @@ li{
     margin-bottom: 20px;
     border: 1px solid #CDCDFC;
 }
-p{
+li p{
     text-align: center;
     line-height: 30px;
     color: black;
