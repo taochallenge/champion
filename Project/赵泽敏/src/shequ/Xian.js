@@ -11,7 +11,7 @@ const Xian = (props) => {
                     <div id='kuai-img'><img src={require('../imgs/19.jpg')}/></div>
                     <div id='kuai-username'>{val1.myname}</div>
                     <div id='kuai-time'>恋爱{val1.countday}天</div>
-                    <textarea rows='3' id='val1'>{val1.content}</textarea>
+                    <textarea rows='3' id='val1' readonly='readonly'>{val1.content}</textarea>
                     <div id='xianmu'
                     onClick={()=>{
                         props.dispatch({
