@@ -1,8 +1,9 @@
 import React,{useEffect} from 'react'
 import './users.css'
 import getUsers from '../GetData/getUsers'
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {NavLink,withRouter} from 'react-router-dom'
+import {RouteWithSubRoutes} from '../App';
 
 const Users = (props) => {
     useEffect(() => {
@@ -16,12 +17,10 @@ const Users = (props) => {
                         <th>用户编号</th>
                         <th>另一半编号</th>
                         <th>用户昵称</th>
-                        <th>另一半昵称</th>
                         <th>用户性别</th>
                         <th>用户年龄</th>
                         <th>用户位置</th>
                         <th>用户生日</th>
-                        <th>另一半生日</th>
                         <th>相恋日期</th>
                         <th>配对码</th>
                         <th>粉丝数</th>
@@ -40,12 +39,10 @@ const Users = (props) => {
                                     <td>{data.id}</td>
                                     <td>{data.herid}</td>
                                     <td>{data.myname}</td>
-                                    <td>{data.hername}</td>
                                     <td>{data.sex}</td>
                                     <td>{data.age}</td>
                                     <td>{data.location}</td>
                                     <td>{data.birthday}</td>
-                                    <td>{data.herbirthday}</td>
                                     <td>{data.lovedata}</td>
                                     <td>{data.secret}</td>
                                     <td>{data.fans}</td>
@@ -55,9 +52,21 @@ const Users = (props) => {
                                     <td>{data.state}</td>
                                     <td>{data.password}</td>
                                     <td>
+                                    {
+                                        props.routes.map((route) => (
+                                            <RouteWithSubRoutes {...route}/>
+                                        ))
+                                    }
                                         <img src={require('../imgs/sc.png')} alt=''></img>
-                                        <img src={require('../imgs/xg.png')} alt=''></img>
-                                        <img src={require('../imgs/tj.png')} alt=''></img>
+                                        <NavLink to={{
+                                            pathname:"/home/users/userschange",
+                                            id:data.id
+                                        }}>
+                                            <img src={require('../imgs/xg.png')} alt=''></img>
+                                        </NavLink>
+                                        <NavLink to="/home/users/usersup">
+                                            <img src={require('../imgs/tj.png')} alt=''></img>
+                                        </NavLink>
                                     </td>
                                 </tr>
                             )
