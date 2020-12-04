@@ -39,7 +39,8 @@
 }
 
 .code {
-    border: 0.5px solid #cdcdcd;
+    border: 0.5px solid #FFAEB9;
+    border-radius: 2vw;
     width: 30vw;
     height: 8vh;
     line-height: 8vh;
@@ -73,8 +74,8 @@
 }
 
 .txt-2 {
-    width: 14vw;
-    font-size: 1px;
+    width: 15vw;
+    font-size: 5px;
     text-align: center;
     margin: 0 0 0 0;
 }
@@ -112,6 +113,7 @@
 }
 
 .ver,
+.btn-1,
 .but:focus {
     outline: none
 }

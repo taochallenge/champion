@@ -1,0 +1,67 @@
+.my {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url("../img/back.jpeg");
+    background-size: 100vw;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.we {
+    width: 100%;
+    height: 60vh;
+    /* border: 1px solid red; */
+    margin-top: 20vh;
+}
+
+.retu {
+    width: 50px;
+    height: 50px;
+    background: url("../img/return0.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.weme {
+    width: 80vw;
+    height: 7vh;
+    color: #FFAEB9;
+    border: 0;
+    border-radius: 5vw;
+    margin: 6vh 0 0 10vw;
+    background-color: white;
+    background-image: url("../img/we.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+}
+
+.service {
+    width: 80vw;
+    height: 7vh;
+    color: #FFAEB9;
+    border: 0;
+    border-radius: 5vw;
+    margin: 6vh 0 0 10vw;
+    background-color: white;
+    background-image: url("../img/service.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+}
+
+.set {
+    width: 80vw;
+    height: 7vh;
+    color: #FFAEB9;
+    border: 0;
+    border-radius: 5vw;
+    margin: 6vh 0 0 10vw;
+    background-color: white;
+    background-image: url("../img/set.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+}
