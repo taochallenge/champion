@@ -19,7 +19,7 @@ class Mytab extends React.Component {
             } }>
                 <TabBar
                     unselectedTintColor="#949494"
-                    tintColor="red"
+                    tintColor="#e5a3a3"
                     barTintColor="white"
                 >
                     <TabBar.Item
