@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#top{
+    height: 50px;
+}
+#bi>img{
+    height:75px;
+    width:75px;
+    position: relative;
+    top:10px;
+    left:13px;
+}
+#bi{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: fixed;
+    top:470px;
+    right:20px;
+    z-index: 98;
+    display: inline-block;
+    background-color: white;
+    border:1px solid #E5A3A3;
+}
+#kuai{
+    width:90%;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    background-color: white;
+    
+}
+#kuai-img>img{
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#kuai-img{
+    display: inline-block;
+    margin-top:10px;
+    margin-left:5px
+}
+#kuai-username{
+    display: inline-block;
+    color:#E5A3A3;
+    font-size:18px;
+    font-weight:bold;
+    position: relative;
+    top:-40px;
+    left:20px;
+}
+#kuai-time{
+    display: inline-block;
+    color:#323030;
+    font-size:14px;
+    position: relative;
+    top:-15px;
+    left:-50px;
+}
+#kuai-qipao{
+    display: inline-block;
+    position: relative;
+    top:-30px;
+    left:140px;
+}
+#kuai-qipao>img{
+    height:30px;
+    width:30px;
+}
+#kuai>textarea{
+    width: 80%;
+    margin-left:40px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border:none;
+}
+#xianmu>img{
+    width:30px;
+    height: 30px;
+}
+#shoucang>img{
+    width:30px;
+    height: 30px;
+}
+#pinglun>img{
+    width:30px;
+    height: 30px;
+}
+#xianmu{
+    display: inline-block;
+    position: relative;
+    left:15px;
+}
+
+
+#xianmu-txt{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:20px;
+}
+#shoucang{
+    display: inline-block;
+    position: relative;
+    left:35px;
+}
+
+#shoucang-txt{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:40px;
+}
+
+#pinglun{
+    display: inline-block;
+    position: relative;
+    left:55px;
+}
+#pinglun-txt{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:60px;
+}

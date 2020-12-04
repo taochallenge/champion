@@ -11,10 +11,6 @@ const Users = (props) => {
     return (
         <div className='wrapUsers'>
             <div className='mainUsers'>
-                <div className='mainBtnUsers'>
-                    <img src={require('../imgs/jia.png')} alt='' className='mainIUsers'></img>
-                    <p>添加</p>
-                </div>
                 <table width='1200px' rules='rows'>
                     <tr bgcolor='#E6E6E6'>
                         <th>用户编号</th>
@@ -59,7 +55,9 @@ const Users = (props) => {
                                     <td>{data.state}</td>
                                     <td>{data.password}</td>
                                     <td>
-                                        <img src={require('../imgs/sc2.png')} alt=''></img>
+                                        <img src={require('../imgs/sc.png')} alt=''></img>
+                                        <img src={require('../imgs/xg.png')} alt=''></img>
+                                        <img src={require('../imgs/tj.png')} alt=''></img>
                                     </td>
                                 </tr>
                             )

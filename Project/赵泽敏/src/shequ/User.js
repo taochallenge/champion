@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import { RouteWithSubRoutes } from './RouteWithSubRoutes';
-import './User.css'
+import './css/User.css'
 const User = ({routes}) => {
     return (
         
