@@ -67,10 +67,10 @@ class Write extends Component {
                         this.props.history.push({
                             pathname:'/User',
                         })
-                        this.props.dispatch({
-                            type:'GETTREES',
-                            list: this.state.inpValue
-                        })
+                        // this.props.dispatch({
+                        //     type:'GETTREES',
+                        //     list: this.state.inpValue
+                        // })
                         
                     }}
                 >发布</div>

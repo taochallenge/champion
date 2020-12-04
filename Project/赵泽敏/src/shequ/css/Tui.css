@@ -109,20 +109,7 @@
     position: relative;
     left:35px;
 }
-/* #shoucang-img{
-    position:absolute;
-    left:0px;
-    display: none;
-}
-#shoucang-img1{
-    z-index: 98;
-}
-#shoucang-img1>img:link{
-    display: none;  
-}
-#shoucang-img1>img:visited {display: none;  }
-#shoucang-img1>img:hover   {display: none;  }
-#shoucang-img1>img:active  {display: none;  } */
+
 #shoucang-txt{
     display: inline-block;
     position: relative;

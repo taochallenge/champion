@@ -42,7 +42,6 @@ const Tui = (props) => {
                     </div>
                     <div id='xianmu-txt'>{val1.countadmire}羡慕</div>
                     <div id='shoucang'
-                    className='sc'
                     onClick={()=>{
                         props.dispatch({
                             type:'SHOUCANG',
@@ -57,8 +56,6 @@ const Tui = (props) => {
                         ? <img src={require('../imgs/shoucangsel.png')}></img>
                         : <img src={require('../imgs/shoucang.png')}></img>
                         }
-                        {/* <img src={require('../imgs/shoucang.png')} id='shoucang-img1'/> */}
-                        {/* <img src={require('../imgs/shoucangsel.png')} id='shoucang-img'/> */}
                     </div>
                     <div id='shoucang-txt'>{val1.collect}收藏</div>
                     <div id='pinglun'><img src={require('../imgs/pinglun.png')}/></div>
