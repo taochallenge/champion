@@ -1,8 +1,9 @@
 import React,{useEffect}  from 'react'
 import './users.css'
 import getLittle from '../GetData/getLittle'
-import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import {NavLink,withRouter} from 'react-router-dom'
+import {RouteWithSubRoutes} from '../App';
 
 const Little = (props) => {
     useEffect(() => {
@@ -20,6 +21,7 @@ const Little = (props) => {
                     <th>小事完成状态</th>
                     <th>地点</th>
                     <th>小事描述</th>
+                    <th>操作</th>
                 </tr>
                 <tbody>
                 {
@@ -33,6 +35,23 @@ const Little = (props) => {
                                 <td>{data.state==0?'未完成':'已完成'}</td>
                                 <td>{data.place}</td>
                                 <td>{data.describe}</td>
+                                <td>
+                                    {
+                                        props.routes.map((route) => (
+                                            <RouteWithSubRoutes {...route}/>
+                                        ))
+                                    }
+                                        <img src={require('../imgs/sc.png')} alt=''></img>
+                                        <NavLink to={{
+                                            pathname:"/home/little/littlechange",
+                                            id:data.id
+                                        }}>
+                                            <img src={require('../imgs/xg.png')} alt=''></img>
+                                        </NavLink>
+                                        <NavLink to="/home/little/littleup">
+                                            <img src={require('../imgs/tj.png')} alt=''></img>
+                                        </NavLink>
+                                </td>
                             </tr>
                         )
                     })

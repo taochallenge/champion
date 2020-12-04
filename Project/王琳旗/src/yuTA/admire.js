@@ -1,7 +1,9 @@
 import React from 'react'
 import './users.css'
+import {NavLink,withRouter} from 'react-router-dom'
+import {RouteWithSubRoutes} from '../App';
 
-const Admire = () => {
+const Admire = (props) => {
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
@@ -16,17 +18,39 @@ const Admire = () => {
                     <th>是否被收藏</th>
                     <th>羡慕树时间</th>
                     <th>羡慕树者</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
-                {/* <tbody>
-                {
-                    listadmire
-                }
-                </tbody> */}
+                <tbody>
+                    <tr align='center' >
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        {
+                            props.routes.map((route) => (
+                                <RouteWithSubRoutes {...route}/>
+                            ))
+                        }
+                            <img src={require('../imgs/sc.png')} alt=''></img>
+                            <NavLink to="/home/admire/admirechange">
+                                <img src={require('../imgs/xg.png')} alt=''></img>
+                            </NavLink>
+                            <NavLink to="/home/admire/admireup">
+                                <img src={require('../imgs/tj.png')} alt=''></img>
+                            </NavLink>
+                        </td>
+                    </tr>
+                </tbody>
                 </table>
             </div>
         </div>
     )
 }
 
-export default Admire
+export default withRouter(Admire)
