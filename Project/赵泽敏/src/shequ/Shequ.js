@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink, Redirect, withRouter } from 'react-router-dom'
-import './shequ.css'
+import './css/shequ.css'
 import { RouteWithSubRoutes } from './RouteWithSubRoutes';
 import { Switch } from 'antd-mobile';
-import Mytab from '../mytab/Mytab';
+// import Mytab from '../mytab/Mytab';
 
 
 const Shequ = ({ routes }) => {
@@ -31,7 +31,7 @@ const Shequ = ({ routes }) => {
                     </ol>
                 </div>
             </div>
-            <Mytab/>
+            {/* <Mytab/> */}
         </div>
     )
 }

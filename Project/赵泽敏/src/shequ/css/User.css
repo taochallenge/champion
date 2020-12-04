@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#all1{
+    background: url(../../imgs/riji.jpeg);
+    height: 232px;
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+}
+#nav1{
+    height:50px;
+    width: 100%;
+}
+#da>img{   
+    height:30px;
+    width:30px;
+}
+#da{
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#text{
+    display: inline-block;
+    font-size: 23px;
+    margin-left: 140px;
+    position: relative;
+    top:-7px;
+}
+#line1{
+    height: 1px;
+    background-color: #BBBBBB;
+    width:90%;
+    margin: 0 auto;
+}
+#ziliao{
+    height:140px;
+    width:100%;
+}
+#touxiang{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    top:20px;
+    left:25px;
+    display: inline-block;
+}
+#shuju{
+    position: relative;
+    top:-75px;
+    left:150px;
+    font-size: 16px;
+}
+#gzs{
+    display: inline-block;
+    margin-left: 20px;
+}
+#fss{
+    display: inline-block;
+    margin-left: 48px;
+}
+#xms{
+    display: inline-block;
+    margin-left: 40px;
+}
+#txt{
+    position: relative;
+    top:-70px;
+    left:140px;
+    font-size: 16px;
+
+    display: inline-block;
+}
+#gz{
+    display: inline-block;
+    margin-left: 20px;
+}
+#fs{
+    display: inline-block;
+    margin-left: 35px;
+}
+#xm{
+    display: inline-block;
+    margin-left: 35px;
+}
+#write{
+    height:28px;
+    width:150px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    top:-25px;
+    left:-20px;
+    border-radius: 18px;
+    text-align: center;
+}
+#write1{
+    display: inline-block;
+    color:#E5A3A3;
+    font-size:15px;
+    margin-top:3px;
+}
+#content{
+    width:100%;
+    height:40px;
+    display: flex;
+}
+#zhong{
+    display: inline-block;
+    margin-left: 40px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+}
+#shou{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+}
+#xian{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+}

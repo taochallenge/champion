@@ -1,15 +1,23 @@
-// import React, { Component } from 'react';
 import React, { Component, Fragment } from 'react';
 import { createBrowserHistory } from 'history';
 import './login.css';
-// import qq from '../img/qq.png'
+import qq from '../img/qq.png'
+import weixin from '../img/weixin.png'
+import weibo from '../img/weibo.png'
+
 export default class Login extends Component {
+  pairing() {
+    let history = createBrowserHistory();
+    history.push('/pairing');
+    history.go();
+  }
 
   register() {
     let history = createBrowserHistory();
     history.push('/register');
     history.go();
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -24,12 +32,14 @@ export default class Login extends Component {
             <div className={this.state.show ? 'show' : 'hide'}>
               <h1 className="app-title">遇TA</h1>
               <div className="btn-group">
-                <button className="btn none-default">登录</button>
+                <button className="btn none-default" onClick={this.pairing}>登录</button>
                 <button className="btn none-default" onClick={this.register}>注册</button>
               </div>
-              {/* <div>
-                <img src={qq}/> 
-              </div> */}
+              <div className="image">
+                <a href=" https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&redirect_uri=http%3A%2F%2Fspcdp.cdposs.qq.com%2Fauth%2Fcallback&client_id=101477813&state=http%3A%2F%2Fspcdp.cdposs.qq.com%2F"><img src={qq} /></a>
+                <a href="#"><img src={weixin} /></a>
+                <a href="#"><img src={weibo} /></a>
+              </div>
             </div>
           </Fragment>
         </div>

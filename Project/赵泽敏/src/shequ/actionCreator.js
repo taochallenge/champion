@@ -1,4 +1,4 @@
-const getTrees = (list)=>{
+const getTrees = ()=>{
     return (dispatch)=>{
         let url = '/tree';
         fetch(url, {
@@ -17,7 +17,26 @@ const getTrees = (list)=>{
     }
 }
 
-const shoucang = (sclist)=>{
+const getUsers = ()=>{
+    return (dispatch)=>{
+        let url = '/user';
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(res => res.json())
+        .then(res => {
+            dispatch({
+                type: 'GETUSERS',
+                ulist: res
+            })
+        })
+    }
+}
+
+const shoucang = ()=>{
     return (dispatch)=>{
         let url = 'https://www.fastmock.site/mock/9e4bbf9e35ad15942010865690c87ac6/api/getgoodslist';
         fetch(url, {
@@ -35,7 +54,7 @@ const shoucang = (sclist)=>{
         })
     }
 }
-const xianmu = (xmlist)=>{
+const xianmu = ()=>{
     return (dispatch)=>{
         let url = 'https://www.fastmock.site/mock/9e4bbf9e35ad15942010865690c87ac6/api/getgoodslist';
         fetch(url, {
@@ -54,4 +73,4 @@ const xianmu = (xmlist)=>{
     }
 }
 
-export {getTrees,shoucang,xianmu}
+export {getTrees,getUsers,shoucang,xianmu}

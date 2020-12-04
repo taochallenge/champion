@@ -1,23 +1,22 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom';
-import {BrowserRouter as Switch,NavLink,Redirect} from 'react-router-dom'
+import {NavLink,Redirect,withRouter} from 'react-router-dom'
 import './home.css';
 import {RouteWithSubRoutes} from '../App';
 
 const Home = ({routes}) => {
   return (
-    <div class='wrapUsers'>
-        <div class='headerUsers'>
+    <div className='wrapUsers'>
+        <div className='headerUsers'>
             <p>遇TA后台管理系统</p>
         </div>
-        <div class='mainUsers'>
-            <div class='mainLeftUsers'>
-            {
-                routes.map((route) => (
-                    <RouteWithSubRoutes   {...route}/>
-                ))
-            }
-            <Redirect from='/home' to='/home/users'/>
+        <div className='mainUsers'>
+            <div className='mainLeftUsers'>
+                {
+                    routes.map((route) => (
+                        <RouteWithSubRoutes {...route}/>
+                    ))
+                }
+                <Redirect from='/home' to='/home/users'/>
             </div>
             <ul>
                 <li><NavLink to="/home/users"><p>用户管理</p></NavLink></li>

@@ -4,11 +4,11 @@ import './login.css'
 
 const Login = (props) => {
     return (
-        <div class='wrapLogin'>
-            <img src={require('../imgs/wo2.png')} class='mainI'></img>
-            <input class='mainLogin' placeholder='账户名' />
-            <input class='mainLogin' placeholder='密码' />
-            <button class='mainLogin'
+        <div className='wrapLogin'>
+            <img src={require('../imgs/wo2.png')} alt='' className='mainI'></img>
+            <input className='mainLogin' placeholder='账户名' />
+            <input className='mainLogin' placeholder='密码' />
+            <button className='mainLogin'
                 onClick={()=>{
                     props.history.push('/home');
             }}>登录</button>

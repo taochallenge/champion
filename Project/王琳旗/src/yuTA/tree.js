@@ -1,10 +1,16 @@
-import React from 'react'
+import React,{useEffect}  from 'react'
 import './users.css'
+import getTree from '../GetData/getTree'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const Tree = () => {
+const Tree = (props) => {
+    useEffect(() => {
+        props.dispatch(getTree());
+    }, [])
     return (
-        <div class='wrapUsers'>
-            <div class='mainRightUsers'>
+        <div className='wrapUsers'>
+            <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
                 <tr bgcolor='#E6E6E6'>
                     <th>种树编号</th>
@@ -13,13 +19,32 @@ const Tree = () => {
                     <th>相恋天数</th>
                     <th>羡慕人数</th>
                     <th>是否被收藏</th>
-                    <th>种树时间</th>
                     <th>种树创作者</th>
                 </tr>
+                <tbody>
+                {
+                    props.treelist.map((data,index)=> {
+                        return (
+                            <tr align='center' key={index} >
+                                <td>{data.id}</td>
+                                <td>{data.content}</td>
+                                <td>{data.imgpath}</td>
+                                <td>{data.countday}</td>
+                                <td>{data.countadmire}</td>
+                                <td>{data.collect==1?'已收藏':'未收藏'}</td>
+                                <td>{data.uid}</td>
+                             </tr>
+                        )
+                    })
+                }
+                </tbody>
             </table>
             </div>
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+    treelist: state.treelist,
+})
 
-export default Tree
+export default connect(mapStateToProps)(withRouter(Tree));

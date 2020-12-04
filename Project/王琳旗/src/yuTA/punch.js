@@ -3,8 +3,8 @@ import './users.css'
 
 const Punch = () => {
     return (
-        <div class='wrapUsers'>
-            <div class='mainRightUsers'>
+        <div className='wrapUsers'>
+            <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
                 <tr bgcolor='#E6E6E6'>
                     <th>打卡人编号</th>

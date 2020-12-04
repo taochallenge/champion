@@ -1,7 +1,7 @@
 table{
-    width:1000px;
+    width:1250px;
     position: absolute;
-    left: 300px;
+    left: 250px;
     top:150px;
 }
 table th{
@@ -9,4 +9,7 @@ table th{
 }
 table tr{
     height: 30px;
+}
+table tr img{
+    margin-left: 15px;
 }
