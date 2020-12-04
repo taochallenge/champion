@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Mytab from './Mytab'
-import Jinian from './Daywords'
 import './Home.css'
 import Daywords from './Daywords';
 
@@ -18,11 +17,13 @@ class Home extends React.Component{
   
   render(){
     return (
-    <div className='yuta'>
+    <div>
       <div className='wrap'>
         <Daywords/>
         <div id='diary'>
-          <img src={require('./imgs/riji.png')}/>
+          <img src={require('./imgs/riji.png')} onClick={() => {
+            this.props.history.push('/Riji')}}
+          />
           <p>写日记</p>
         </div>
 

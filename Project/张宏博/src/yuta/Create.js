@@ -1,57 +1,25 @@
 import React, { Component } from 'react'
 import { NavBar, Icon } from 'antd-mobile';
-import { DatePicker, List } from 'antd-mobile';
-
-const nowTimeStamp = Date.now();
-const now = new Date(nowTimeStamp);
-
-const utcNow = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
-
-let minDate = new Date(nowTimeStamp - 1e7);
-const maxDate = new Date(nowTimeStamp + 1e7);
-
-if (minDate.getDate() !== maxDate.getDate()) {
-
-  minDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
-}
-
-function formatDate(date) {
-  const pad = n => n < 10 ? `0${n}` : n;
-  const dateStr = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-  const timeStr = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
-  return `${dateStr} ${timeStr}`;
-}
-
-
-
+import Time from './Time'
+import Editor from './Editor';
+import Click from './Click'
+import './Create.css'
 
 class Create extends Component {
-    state = {
-        date: now,
-        time: now,
-        utcDate: utcNow,
-        dpValue: null,
-        customChildValue: null,
-        visible: false,
-      }
     render() {
         return (
             <div>
-               <NavBar
+                <NavBar
                     mode="light"
-                    icon={<Icon type="left"/>}
+                    icon={<Icon type="left" id='back1'/>}
                     onLeftClick={() => this.props.history.push('/Jinian')}
                 >创建纪念日</NavBar>
-
-                <List className="date-picker-list" style={{ backgroundColor: 'white' }}>
-                    <DatePicker
-                    value={this.state.date}
-                    onChange={date => this.setState({ date })}
-                    >
-                        <List.Item arrow="horizontal"></List.Item>
-                    </DatePicker>
-                </List>
-        
+                <Editor/>
+                <Time/>
+                <Click/>
+                <div id='btn'>  
+                    <input type='submit' value='保存'/>
+                </div>
             </div>
         )
     }
