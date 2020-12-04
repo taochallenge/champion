@@ -1,0 +1,307 @@
+/* .header{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    width:100%;
+    height: 30px;
+    background-image: url(./tao.png);
+    background-repeat: no-repeat;
+    background-position: 9px center;
+    background-color:rgb(255,133,42);
+    
+}
+.search{
+    padding-right: 10px;
+    padding-left: 60px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+.placeholder{
+    display: block;
+    background-color: red;
+    border-radius: 5px;
+    width:100%;
+}
+.text{
+    height: 15px;
+    font-size: 15px;
+    padding-left: 20px;
+    color: white;
+}
+.slider{
+    padding-top: 20px;
+}
+.like{
+    width: 100%;
+}
+.other{
+    width: 100%;
+    height: 1000px;
+}
+.list {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    place-content: flex-start space-between;
+    overflow: hidden;
+    flex-wrap: wrap;
+    padding: 0 8px;
+    background: #f2f2f2;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.details {
+    position: relative;
+    width: 45%;
+    height: 220px;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: center;
+    overflow: hidden;
+    list-style: none;
+}
+.details img{
+    width: 120px;
+    height: 120px;
+}
+.btnav{ 
+    width: 100%;
+    height: 25px;
+}
+.btn1{
+    width: 15%;
+    border: none;
+    margin-left: 20px;
+    background-color: violet;
+    margin-left: 3px;
+}
+.btn2{
+    width: 15%;
+    border: none;
+    background-color: turquoise;
+    margin-left: 3px;
+}
+.btn3{
+    width: 15%;
+    border: none;
+    background-color: yellow;
+    margin-left: 3px;
+}
+.btn4{
+    width: 22%;
+    height: 30px;
+    border: none;
+    background-color: red;
+    color: white;
+    margin-left: 10px;
+}
+.btn5{
+    width: 22%;
+    height: 30px;
+    border: none;
+    background-color:wheat;
+    color: red;
+    margin-left: 3px;
+} */
+/* #header{
+    width: 100%;
+    background-color: #f0f8ff;
+}
+.back{
+    width: 10%;
+    color: blue;
+    display: inline-block;
+
+}
+.daka{
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 30%;
+} */
+/* ul:nth-child(2) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 4.76rem;
+}
+
+    li {
+        height: 0.7rem;
+        width: 1.071rem;
+        font-size: 0.26rem;
+        font-family: PingFangSC;
+        font-weight: 400;
+        color: rgba(139, 140, 140, 1);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        div {
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 0.74rem;
+        }
+
+        div.active {
+            background: rgba(41, 128, 204, 1);
+            color: #ffffff;
+        }
+
+        p {
+            display: block;
+            width: 0.1rem;
+            height: 0.1rem;
+            border-radius: 50%;
+            background: rgba(41, 128, 204, 1);
+            position: absolute;
+            top: 0;
+            right: 0;
+        } */
+.daka{
+   width: 100%;
+   background-image: url(./images/daka.jpeg);
+
+}
+.replace{
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    
+}
+.lianxu{
+    width: 100%;
+    height: 30px;
+    color: #F88180;
+    margin-top: 200px;
+   
+}
+.dk{
+    width: 100px;
+    height: 30px;
+    color:white;
+    background-color: #F88180;
+    margin-top: 120px;
+    margin-left: 36%;
+    border:0px;
+    border-radius: 3px;
+}
+.continue{
+    width: 25%;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 37.5%;
+    font-size: 20px;
+    color:#F88180;
+}
+.qingdan{
+    width: 60%;
+    height: 375px;
+    border: 1px solid gray;
+    margin-top: 10%;
+    margin-left: 20%;
+    text-align: center;
+}
+.img{
+    width: 100%;
+    height: 60%;
+    border: 1px solid gray
+}
+.record{
+    color: gray;
+    margin-top: 10px;
+}
+.task{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 80%;
+    position: relative;
+    margin-top: -25px;
+    background-color: #F88180;
+}
+.thing{
+    font-size: 25px;
+    margin-top: 5%;
+}
+.describe{
+    font-size: 15px;
+    margin-top: 5%;
+}
+.hidden{
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #F88180;
+    color: white;
+    font-size: 25px;
+    line-height:50px;
+    margin-top: 50px;
+}
+.camera{
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+    /* background-color:#8f8f8850; */
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+}
+.picker{
+    width: 350%;
+    background-size: 100% 100%;
+    margin-left: 20px;
+}
+.confirm{
+    width: 40%;
+    height: 35px;
+    background-color: #F88180;
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+    line-height:35px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.upload{
+    font-size: 15px;
+}
+.one{
+    font-size: 20px;
+    font-weight: 500;
+}
+.two{
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+.three{
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 35px;
+}
+.four{
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+.five{
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    
+}
+.rili{
+    position:absolute;
+    background-repeat: no-repeat;
+}
