@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './write.css'
+import './css/write.css'
 import { connect } from 'react-redux';
 
 class Write extends Component {
@@ -65,7 +65,7 @@ class Write extends Component {
                 <div id='text2'       
                     onClick={()=>{
                         this.props.history.push({
-                            pathname:'/Shequ',
+                            pathname:'/User',
                         })
                         this.props.dispatch({
                             type:'GETTREES',
