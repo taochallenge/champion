@@ -38,9 +38,9 @@ const Admire = (props) => {
                             ))
                         }
                             <img src={require('../imgs/sc.png')} alt=''></img>
-                            <NavLink to="/home/admire/admirechange">
+                            {/* <NavLink to="/home/admire/admirechange">
                                 <img src={require('../imgs/xg.png')} alt=''></img>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink to="/home/admire/admireup">
                                 <img src={require('../imgs/tj.png')} alt=''></img>
                             </NavLink>

@@ -36,12 +36,12 @@ const Memory = (props) => {
                                         ))
                                     }
                                         <img src={require('../imgs/sc.png')} alt=''></img>
-                                        <NavLink to={{
+                                        {/* <NavLink to={{
                                             pathname:"/home/memory/memorychange",
                                             id:data.id    
                                         }}>
                                             <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink>
+                                        </NavLink> */}
                                         <NavLink to="/home/memory/memoryup">
                                             <img src={require('../imgs/tj.png')} alt=''></img>
                                         </NavLink>

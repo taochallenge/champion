@@ -40,12 +40,12 @@ const Centence = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt=''></img>
-                                    <NavLink to={{
+                                    {/* <NavLink to={{
                                         pathname:"/home/centence/centencechange",
                                         id:data.id
                                     }}>
                                         <img src={require('../imgs/xg.png')} alt=''></img>
-                                    </NavLink>
+                                    </NavLink> */}
                                     <NavLink to="/home/centence/centenceup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

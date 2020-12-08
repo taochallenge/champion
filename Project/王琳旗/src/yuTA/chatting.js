@@ -34,9 +34,9 @@ const Chatting = (props) => {
                             ))
                         }
                             <img src={require('../imgs/sc.png')} alt=''></img>
-                            <NavLink to="/home/chatting/chattingchange">
+                            {/* <NavLink to="/home/chatting/chattingchange">
                                 <img src={require('../imgs/xg.png')} alt=''></img>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink to="/home/chatting/chattingup">
                                 <img src={require('../imgs/tj.png')} alt=''></img>
                             </NavLink>

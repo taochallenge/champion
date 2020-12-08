@@ -9,6 +9,13 @@ const Users = (props) => {
     useEffect(() => {
         props.dispatch(getUsers());
     }, [])
+    const deleteUser = (id) => {
+        let url = '/user/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/users')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainUsers'>
@@ -39,7 +46,7 @@ const Users = (props) => {
                                     <td>{data.id}</td>
                                     <td>{data.herid}</td>
                                     <td>{data.myname}</td>
-                                    <td>{data.sex}</td>
+                                    <td>{data.sex==1?'女':'男'}</td>
                                     <td>{data.age}</td>
                                     <td>{data.location}</td>
                                     <td>{data.birthday}</td>
@@ -57,13 +64,13 @@ const Users = (props) => {
                                             <RouteWithSubRoutes {...route}/>
                                         ))
                                     }
-                                        <img src={require('../imgs/sc.png')} alt=''></img>
-                                        <NavLink to={{
+                                        <img src={require('../imgs/sc.png')} alt='' onClick={deleteUser.bind(this,data.id)}></img>
+                                        {/* <NavLink to={{
                                             pathname:"/home/users/userschange",
                                             id:data.id
                                         }}>
                                             <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink>
+                                        </NavLink> */}
                                         <NavLink to="/home/users/usersup">
                                             <img src={require('../imgs/tj.png')} alt=''></img>
                                         </NavLink>
