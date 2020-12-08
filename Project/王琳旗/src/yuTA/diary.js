@@ -9,6 +9,13 @@ const Diary = (props) => {
     useEffect(() => {
         props.dispatch(getDiary());
     }, [])
+    const deleteDiary = (id) => {
+        let url = '/diary/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/diary')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
@@ -39,13 +46,13 @@ const Diary = (props) => {
                                             <RouteWithSubRoutes {...route}/>
                                         ))
                                     }
-                                        <img src={require('../imgs/sc.png')} alt=''></img>
-                                        <NavLink to={{
+                                        <img src={require('../imgs/sc.png')} alt='' onClick={deleteDiary.bind(this,data.id)}></img>
+                                        {/* <NavLink to={{
                                             pathname:"/home/diary/diarychange",
                                             id:data.id
                                         }}>
                                             <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink>
+                                        </NavLink> */}
                                         <NavLink to="/home/diary/diaryup">
                                             <img src={require('../imgs/tj.png')} alt=''></img>
                                         </NavLink>

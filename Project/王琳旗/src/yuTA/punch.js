@@ -26,9 +26,9 @@ const Punch = (props) => {
                             ))
                         }
                             <img src={require('../imgs/sc.png')} alt=''></img>
-                            <NavLink to="/home/punch/punchchange">
+                            {/* <NavLink to="/home/punch/punchchange">
                                 <img src={require('../imgs/xg.png')} alt=''></img>
-                            </NavLink>
+                            </NavLink> */}
                             <NavLink to="/home/punch/punchup">
                                 <img src={require('../imgs/tj.png')} alt=''></img>
                             </NavLink>

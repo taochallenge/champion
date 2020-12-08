@@ -42,12 +42,12 @@ const Tree = (props) => {
                                         ))
                                     }
                                         <img src={require('../imgs/sc.png')} alt=''></img>
-                                        <NavLink to={{
+                                        {/* <NavLink to={{
                                             pathname:"/home/tree/treechange",
                                             id:data.id
                                         }}>
                                             <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink>
+                                        </NavLink> */}
                                         <NavLink to="/home/tree/treeup">
                                             <img src={require('../imgs/tj.png')} alt=''></img>
                                         </NavLink>

@@ -1,7 +1,9 @@
 const getLittle = (littlelist) => {
     return (dispatch) => {
         let url = '/little';
-        fetch(url)
+        fetch(url,{
+            method:'GET'
+        })
         .then(res => res.json())
         .then(res => {
             dispatch({
