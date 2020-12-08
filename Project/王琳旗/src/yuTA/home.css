@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+#welcome{
+    color: rgb(255,255,255);
+}
 .headerUsers{
     width: 100%;
     height: 100px;

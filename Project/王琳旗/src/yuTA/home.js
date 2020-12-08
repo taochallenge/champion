@@ -7,7 +7,7 @@ const Home = ({routes}) => {
   return (
     <div className='wrapUsers'>
         <div className='headerUsers'>
-            <p>遇TA后台管理系统</p>
+            <p>遇TA后台管理系统,欢迎你<span id='welcome'>{localStorage['name']}</span></p>
         </div>
         <div className='mainUsers'>
             <div className='mainLeftUsers'>
