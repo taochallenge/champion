@@ -1,4 +1,5 @@
-import React,{Component} from 'react'
+import React from 'react'
+import {Component} from 'react'
 import './usersUp.css'
 
 class DiaryUp extends Component {
@@ -8,7 +9,7 @@ class DiaryUp extends Component {
   }
   AddSubmit = (e) => {
     e.preventDefault();
-    fetch('/diary', {
+    fetch('/diaries', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'

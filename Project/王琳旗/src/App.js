@@ -21,8 +21,8 @@ const App =()=>{
 		<Router>
 			<Switch>
 			{
-				routes.map((route) => (
-					<RouteWithSubRoutes {...route}/>
+				routes.map((route,i) => (
+					<RouteWithSubRoutes {...route} key={i}/>
 		  		))
 			}
 			</Switch>

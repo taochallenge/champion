@@ -5,10 +5,14 @@ import diarylist from '../Reduders/diaryReducer';
 import littlelist from '../Reduders/littleReducer';
 import memorylist from '../Reduders/memoryReducer';
 import treelist from '../Reduders/treeReducer';
+import admirelist from '../Reduders/admireReducer';
+import punchlist from '../Reduders/punchReducer';
+import chattinglist from '../Reduders/chattingReducer';
+import collectionlist from '../Reduders/collectionReducer';
 
 
 let rootReducer = combineReducers({
-    userslist,centencelist,diarylist,littlelist,memorylist,treelist
+    userslist,centencelist,diarylist,littlelist,memorylist,treelist,admirelist,punchlist,chattinglist,collectionlist
 })
 
 const thunk = ({ dispatch, getState }) => (next) => (action) => {

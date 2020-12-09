@@ -1,15 +1,15 @@
-const getDiary = (diarylist) => {
+const getAdmire = (admirelist) => {
     return (dispatch) => {
-        let url = '/diaries';
+        let url = '/admire';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETDIARIES',
-                diarylist: res
+                type: 'GETADMIRE',
+                admirelist: res
             })
         })
     }
 }
 
-export default getDiary
+export default getAdmire

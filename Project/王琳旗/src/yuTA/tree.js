@@ -9,10 +9,18 @@ const Tree = (props) => {
     useEffect(() => {
         props.dispatch(getTree());
     }, [])
+    const deleteTree = (id) => {
+        let url = '/tree/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/tree')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
+                <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>种树编号</th>
                     <th>种树内容</th>
@@ -23,6 +31,7 @@ const Tree = (props) => {
                     <th>种树创作者</th>
                     <th>操作</th>
                 </tr>
+                </thead>
                 <tbody>
                 {
                     props.treelist.map((data,index)=> {
@@ -37,11 +46,11 @@ const Tree = (props) => {
                                 <td>{data.uid}</td>
                                 <td>
                                     {
-                                        props.routes.map((route) => (
-                                            <RouteWithSubRoutes {...route}/>
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
                                         ))
                                     }
-                                        <img src={require('../imgs/sc.png')} alt=''></img>
+                                        <img src={require('../imgs/sc.png')} alt='' onClick={deleteTree.bind(this,data.id)}></img>
                                         {/* <NavLink to={{
                                             pathname:"/home/tree/treechange",
                                             id:data.id

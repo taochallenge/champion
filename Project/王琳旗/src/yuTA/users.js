@@ -20,6 +20,7 @@ const Users = (props) => {
         <div className='wrapUsers'>
             <div className='mainUsers'>
                 <table width='1200px' rules='rows'>
+                    <thead>
                     <tr bgcolor='#E6E6E6'>
                         <th>用户编号</th>
                         <th>另一半编号</th>
@@ -38,6 +39,7 @@ const Users = (props) => {
                         <th>用户密码</th>
                         <th>操作</th>
                     </tr>
+                    </thead>
                     <tbody>
                     {
                         props.userslist.map((data,index)=> {
@@ -60,8 +62,8 @@ const Users = (props) => {
                                     <td>{data.password}</td>
                                     <td>
                                     {
-                                        props.routes.map((route) => (
-                                            <RouteWithSubRoutes {...route}/>
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
                                         ))
                                     }
                                         <img src={require('../imgs/sc.png')} alt='' onClick={deleteUser.bind(this,data.id)}></img>

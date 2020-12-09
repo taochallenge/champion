@@ -89,11 +89,11 @@ class UsersUp extends Component {
       tel: e.target.value
     })
   }
-  // AddState = (e) => {
-  //   this.setState({
-  //     state: e.target.value
-  //   })
-  // }
+  AddState = (e) => {
+    this.setState({
+      state: e.target.value
+    })
+  }
   render() {
     return (
       <div id='UsersupDiv'>
@@ -151,10 +151,10 @@ class UsersUp extends Component {
             <p>用户电话:</p>
             <input type='tel' value={this.state.tel} onChange={this.AddTel} placeholder='请输入用户电话' />
           </div>
-          {/* <div className='UsersupInp'>
+          <div className='UsersupInp'>
             <p>用户在线状态:</p>
             <input type='number' value={this.state.state} onChange={this.AddState} placeholder='请输入用户在线状态' />
-          </div> */}
+          </div>
           <div className='UsersupInp'>
             <p>用户密码:</p>
             <input type='password' value={this.state.password} onChange={this.AddPassword} placeholder='请输入用户密码' />

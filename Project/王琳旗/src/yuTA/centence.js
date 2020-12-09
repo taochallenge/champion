@@ -9,10 +9,18 @@ const Centence = (props) => {
     useEffect(() => {
         props.dispatch(getCentence());
     }, [])
+    const deleteCentnece = (id) => {
+        let url = '/centence/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/centence')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
+                <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>句子编号</th>
                     <th>句子内容</th>
@@ -22,6 +30,7 @@ const Centence = (props) => {
                     <th>句子英文标题</th>
                     <th>操作</th>
                 </tr>
+                </thead>
                 <tbody>
                 {
                     props.centencelist.map((data,index)=> {
@@ -35,11 +44,11 @@ const Centence = (props) => {
                                 <td>{data.titleenglish}</td>
                                 <td>
                                     {
-                                        props.routes.map((route) => (
-                                            <RouteWithSubRoutes {...route}/>
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
                                         ))
                                     }
-                                    <img src={require('../imgs/sc.png')} alt=''></img>
+                                    <img src={require('../imgs/sc.png')} alt='' onClick={deleteCentnece.bind(this,data.id)}></img>
                                     {/* <NavLink to={{
                                         pathname:"/home/centence/centencechange",
                                         id:data.id

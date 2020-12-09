@@ -1,44 +1,66 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './users.css'
-import {NavLink} from 'react-router-dom'
-import {RouteWithSubRoutes} from '../App';
+import { NavLink,withRouter } from 'react-router-dom'
+import { RouteWithSubRoutes } from '../App';
+import getPunch from '../GetData/getPunch'
+import { connect } from 'react-redux';
+
 
 const Punch = (props) => {
+    useEffect(() => {
+        props.dispatch(getPunch());
+    }, [])
+    const deletePunch = (id) => {
+        let url = '/punch/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/punch')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
-            <table width='1200px' rules='rows'>
-                <tr bgcolor='#E6E6E6'>
-                    <th>打卡人编号</th>
-                    <th>打卡人时间</th>
-                    <th>打卡人总天数</th>
-                    <th>操作</th>
-                </tr>
-                <tbody>
-                    <tr align='center' >
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                        {
-                            props.routes.map((route) => (
-                                <RouteWithSubRoutes {...route}/>
-                            ))
-                        }
-                            <img src={require('../imgs/sc.png')} alt=''></img>
-                            {/* <NavLink to="/home/punch/punchchange">
-                                <img src={require('../imgs/xg.png')} alt=''></img>
-                            </NavLink> */}
-                            <NavLink to="/home/punch/punchup">
-                                <img src={require('../imgs/tj.png')} alt=''></img>
-                            </NavLink>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <table width='1200px' rules='rows'>
+                    <thead>
+                        <tr bgcolor='#E6E6E6'>
+                        <th>打卡人编号</th>
+                        <th>打卡人时间</th>
+                        <th>打卡人总天数</th>
+                        <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        props.punchlist.map((data, index) => {
+                            return (
+                                <tr align='center' key={index} >
+                                    <td>{data.id}</td>
+                                    <td>{data.time}</td>
+                                    <td>{data.count}</td>
+                                    <td>
+                                    {
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
+                                        ))
+                                    }
+                                    <img src={require('../imgs/sc.png')} alt='' onClick={deletePunch.bind(this,data.id)}></img>
+                                    <NavLink to="/home/punch/punchup">
+                                        <img src={require('../imgs/tj.png')} alt=''></img>
+                                    </NavLink>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
+                    </tbody>
+                </table>
             </div>
         </div>
     )
 }
 
-export default Punch
+const mapStateToProps = (state) => ({
+    punchlist: state.punchlist,
+})
+
+export default connect(mapStateToProps)(withRouter(Punch));

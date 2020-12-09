@@ -20,6 +20,7 @@ const Diary = (props) => {
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
+                <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>日记编号</th>
                     <th>日记内容</th>
@@ -29,6 +30,7 @@ const Diary = (props) => {
                     <th>日记创作者</th>
                     <th>操作</th>
                 </tr>
+                </thead>
                 <tbody>
                 {
                     props.diarylist.map((data,index)=> {
@@ -42,8 +44,8 @@ const Diary = (props) => {
                                 <td>{data.uid}</td>
                                 <td>
                                     {
-                                        props.routes.map((route) => (
-                                            <RouteWithSubRoutes {...route}/>
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
                                         ))
                                     }
                                         <img src={require('../imgs/sc.png')} alt='' onClick={deleteDiary.bind(this,data.id)}></img>

@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect}  from 'react'
 import './users.css'
+import getAdmire from '../GetData/getAdmire'
+import { connect } from 'react-redux';
 import {NavLink,withRouter} from 'react-router-dom'
 import {RouteWithSubRoutes} from '../App';
 
 const Admire = (props) => {
+    useEffect(() => {
+        props.dispatch(getAdmire());
+    }, [])
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
@@ -22,35 +27,46 @@ const Admire = (props) => {
                 </tr>
                 </thead>
                 <tbody>
-                    <tr align='center' >
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                        {
-                            props.routes.map((route) => (
-                                <RouteWithSubRoutes {...route}/>
-                            ))
-                        }
-                            <img src={require('../imgs/sc.png')} alt=''></img>
-                            {/* <NavLink to="/home/admire/admirechange">
-                                <img src={require('../imgs/xg.png')} alt=''></img>
-                            </NavLink> */}
-                            <NavLink to="/home/admire/admireup">
-                                <img src={require('../imgs/tj.png')} alt=''></img>
-                            </NavLink>
-                        </td>
-                    </tr>
+                {
+                    props.admirelist.map((data,index)=> {
+                        return (
+                            <tr align='center' key={index} >
+                                <td>{data.id}</td>
+                                <td>{data.content}</td>
+                                <td>{data.imgpath}</td>
+                                <td>{data.time}</td>
+                                <td>{data.countday}</td>
+                                <td>{data.countadmire}</td>
+                                <td>{data.uid}</td>
+                                <td>
+                                    {
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
+                                        ))
+                                    }
+                                    <img src={require('../imgs/sc.png')} alt=''></img>
+                                    {/* <NavLink to={{
+                                        pathname:"/home/admire/admirechange",
+                                        id:data.id
+                                    }}>
+                                        <img src={require('../imgs/xg.png')} alt=''></img>
+                                    </NavLink> */}
+                                    <NavLink to="/home/admire/admireup">
+                                        <img src={require('../imgs/tj.png')} alt=''></img>
+                                    </NavLink>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
                 </table>
             </div>
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+    admirelist: state.admirelist,
+})
 
-export default withRouter(Admire)
+export default connect(mapStateToProps)(withRouter(Admire));

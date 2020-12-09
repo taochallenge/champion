@@ -9,10 +9,18 @@ const Little = (props) => {
     useEffect(() => {
         props.dispatch(getLittle());
     }, [])
+    const deleteLittle = (id) => {
+        let url = '/little/'+ id;
+        fetch(url,{
+            method: 'DELETE'
+        });
+        props.history.push('/home/little')
+    }
     return (
         <div className='wrapUsers'>
             <div className='mainRightUsers'>
             <table width='1200px' rules='rows'>
+                <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>小事编号</th>
                     <th>小事名字</th>
@@ -23,6 +31,7 @@ const Little = (props) => {
                     <th>小事描述</th>
                     <th>操作</th>
                 </tr>
+                </thead>
                 <tbody>
                 {
                     props.littlelist.map((data,index)=> {
@@ -37,11 +46,11 @@ const Little = (props) => {
                                 <td>{data.describe}</td>
                                 <td>
                                     {
-                                        props.routes.map((route) => (
-                                            <RouteWithSubRoutes {...route}/>
+                                        props.routes.map((route,i) => (
+                                            <RouteWithSubRoutes {...route} key={i}/>
                                         ))
                                     }
-                                        <img src={require('../imgs/sc.png')} alt=''></img>
+                                        <img src={require('../imgs/sc.png')} alt='' onClick={deleteLittle.bind(this,data.id)}></img>
                                         {/* <NavLink to={{
                                             pathname:"/home/little/littlechange",
                                             id:data.id

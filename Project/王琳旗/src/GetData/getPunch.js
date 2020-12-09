@@ -1,15 +1,15 @@
-const getDiary = (diarylist) => {
+const getPunch = (punchlist) => {
     return (dispatch) => {
-        let url = '/diaries';
+        let url = '/punch';
         fetch(url)
         .then(res => res.json())
         .then(res => {
             dispatch({
-                type: 'GETDIARIES',
-                diarylist: res
+                type: 'GETPUNCH',
+                punchlist: res
             })
         })
     }
 }
 
-export default getDiary
+export default getPunch

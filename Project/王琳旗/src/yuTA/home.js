@@ -12,8 +12,8 @@ const Home = ({routes}) => {
         <div className='mainUsers'>
             <div className='mainLeftUsers'>
                 {
-                    routes.map((route) => (
-                        <RouteWithSubRoutes {...route}/>
+                    routes.map((route,i) => (
+                        <RouteWithSubRoutes {...route} key={i}/>
                     ))
                 }
                 <Redirect from='/home' to='/home/users'/>
