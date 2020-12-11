@@ -3,12 +3,14 @@ table{
     position: absolute;
     left: 250px;
     top:150px;
+    margin-bottom: 50px;
 }
 table th{
     height: 30px;
 }
 table tr{
     height: 30px;
+
 }
 table tr img{
     margin-left: 15px;

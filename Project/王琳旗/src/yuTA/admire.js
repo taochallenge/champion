@@ -1,19 +1,17 @@
-import React,{useEffect}  from 'react'
+import React, { useEffect } from 'react'
 import './users.css'
 import getAdmire from '../GetData/getAdmire'
 import { connect } from 'react-redux';
-import {NavLink,withRouter} from 'react-router-dom'
-import {RouteWithSubRoutes} from '../App';
+import { NavLink, withRouter } from 'react-router-dom'
+import { RouteWithSubRoutes } from '../App';
 
 const Admire = (props) => {
     useEffect(() => {
         props.dispatch(getAdmire());
     }, [])
     return (
-        <div className='wrapUsers'>
-            <div className='mainRightUsers'>
-            <table width='1200px' rules='rows'>
-                <thead>
+        <table width='1200px' rules='rows'>
+            <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>羡慕树编号</th>
                     <th>羡慕树内容</th>
@@ -25,10 +23,10 @@ const Admire = (props) => {
                     <th>羡慕树者</th>
                     <th>操作</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 {
-                    props.admirelist.map((data,index)=> {
+                    props.admirelist.map((data, index) => {
                         return (
                             <tr align='center' key={index} >
                                 <td>{data.id}</td>
@@ -40,8 +38,8 @@ const Admire = (props) => {
                                 <td>{data.uid}</td>
                                 <td>
                                     {
-                                        props.routes.map((route,i) => (
-                                            <RouteWithSubRoutes {...route} key={i}/>
+                                        props.routes.map((route, i) => (
+                                            <RouteWithSubRoutes {...route} key={i} />
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt=''></img>
@@ -59,10 +57,8 @@ const Admire = (props) => {
                         )
                     })
                 }
-                </tbody>
-                </table>
-            </div>
-        </div>
+            </tbody>
+        </table>
     )
 }
 const mapStateToProps = (state) => ({

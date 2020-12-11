@@ -1,26 +1,24 @@
-import React,{useEffect}  from 'react'
+import React, { useEffect } from 'react'
 import './users.css'
 import getMemory from '../GetData/getMemory'
 import { connect } from 'react-redux';
-import {NavLink,withRouter} from 'react-router-dom'
-import {RouteWithSubRoutes} from '../App';
+import { NavLink, withRouter } from 'react-router-dom'
+import { RouteWithSubRoutes } from '../App';
 
 const Memory = (props) => {
     useEffect(() => {
         props.dispatch(getMemory());
     }, [])
     const deleteMemory = (id) => {
-        let url = '/memory/'+ id;
-        fetch(url,{
+        let url = '/memory/' + id;
+        fetch(url, {
             method: 'DELETE'
         });
         props.history.push('/home/memory')
     }
     return (
-        <div className='wrapUsers'>
-            <div className='mainRightUsers'>
-            <table width='1200px' rules='rows'>
-                <thead>
+        <table width='1200px' rules='rows'>
+            <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>纪念日编号</th>
                     <th>纪念日名字</th>
@@ -28,10 +26,10 @@ const Memory = (props) => {
                     <th>纪念日倒计时</th>
                     <th>操作</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 {
-                    props.memorylist.map((data,index)=> {
+                    props.memorylist.map((data, index) => {
                         return (
                             <tr align='center' key={index} >
                                 <td>{data.id}</td>
@@ -40,30 +38,28 @@ const Memory = (props) => {
                                 <td>{data.countdown}</td>
                                 <td>
                                     {
-                                        props.routes.map((route,i) => (
-                                            <RouteWithSubRoutes {...route} key={i}/>
+                                        props.routes.map((route, i) => (
+                                            <RouteWithSubRoutes {...route} key={i} />
                                         ))
                                     }
-                                        <img src={require('../imgs/sc.png')} alt='' onClick={deleteMemory.bind(this,data.id)}></img>
-                                        {/* <NavLink to={{
+                                    <img src={require('../imgs/sc.png')} alt='' onClick={deleteMemory.bind(this, data.id)}></img>
+                                    {/* <NavLink to={{
                                             pathname:"/home/memory/memorychange",
                                             id:data.id    
                                         }}>
                                             <img src={require('../imgs/xg.png')} alt=''></img>
                                         </NavLink> */}
-                                        <NavLink to="/home/memory/memoryup">
-                                            <img src={require('../imgs/tj.png')} alt=''></img>
-                                        </NavLink>
-                                    </td>
+                                    <NavLink to="/home/memory/memoryup">
+                                        <img src={require('../imgs/tj.png')} alt=''></img>
+                                    </NavLink>
+                                </td>
                             </tr>
-                            
+
                         )
                     })
                 }
-                </tbody>
-                </table>
-            </div>
-        </div>
+            </tbody>
+        </table>
     )
 }
 const mapStateToProps = (state) => ({

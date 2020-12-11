@@ -1,19 +1,17 @@
-import React,{useEffect}  from 'react'
+import React, { useEffect } from 'react'
 import './users.css'
 import getCollection from '../GetData/getCollection'
 import { connect } from 'react-redux';
-import {NavLink,withRouter} from 'react-router-dom'
-import {RouteWithSubRoutes} from '../App';
+import { NavLink, withRouter } from 'react-router-dom'
+import { RouteWithSubRoutes } from '../App';
 
 const Collection = (props) => {
     useEffect(() => {
         props.dispatch(getCollection());
     }, [])
     return (
-        <div className='wrapUsers'>
-            <div className='mainRightUsers'>
-            <table width='1200px' rules='rows'>
-                <thead>
+        <table width='1200px' rules='rows'>
+            <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>收藏树编号</th>
                     <th>收藏树内容</th>
@@ -24,10 +22,10 @@ const Collection = (props) => {
                     <th>收藏树者</th>
                     <th>操作</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 {
-                    props.collectionlist.map((data,index)=> {
+                    props.collectionlist.map((data, index) => {
                         return (
                             <tr align='center' key={index} >
                                 <td>{data.id}</td>
@@ -38,24 +36,22 @@ const Collection = (props) => {
                                 <td>{data.countadmire}</td>
                                 <td>{data.uid}</td>
                                 <td>
-                                {
-                                    props.routes.map((route,i) => (
-                                        <RouteWithSubRoutes {...route} key={i}/>
-                                    ))
-                                }
-                                <img src={require('../imgs/sc.png')} alt=''></img>
-                                <NavLink to="/home/collection/collectionup">
-                                    <img src={require('../imgs/tj.png')} alt=''></img>
-                                </NavLink>
+                                    {
+                                        props.routes.map((route, i) => (
+                                            <RouteWithSubRoutes {...route} key={i} />
+                                        ))
+                                    }
+                                    <img src={require('../imgs/sc.png')} alt=''></img>
+                                    <NavLink to="/home/collection/collectionup">
+                                        <img src={require('../imgs/tj.png')} alt=''></img>
+                                    </NavLink>
                                 </td>
                             </tr>
                         )
                     })
                 }
-                </tbody>
-            </table>
-            </div>
-        </div>
+            </tbody>
+        </table>
     )
 }
 
