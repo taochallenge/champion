@@ -9,12 +9,12 @@ const Diary = (props) => {
     useEffect(() => {
         props.dispatch(getDiary());
     }, [])
-    const deleteDiary = (id) => {
-        let url = '/diary/' + id;
-        fetch(url, {
+    const deleteDiary = async (id) => {
+        let url = '/diaries/' + id;
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/diary')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -47,12 +47,6 @@ const Diary = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteDiary.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                            pathname:"/home/diary/diarychange",
-                                            id:data.id
-                                        }}>
-                                            <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink> */}
                                     <NavLink to="/home/diary/diaryup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

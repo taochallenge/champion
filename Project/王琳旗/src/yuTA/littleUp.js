@@ -7,16 +7,17 @@ class LittleUp extends Component {
     super(props);
     this.state = {};
   }
-  AddSubmit = (e) => {
+  AddSubmit = async (e) => {
     e.preventDefault();
-    fetch('/little', {
+    await fetch('/little', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'
       },
       body: JSON.stringify(this.state)
     })
-    this.props.history.push('/home/little')
+    await this.props.history.push('/home/little')
+    await this.props.history.go(0)
   }
   AddName = (e) => {
     this.setState({

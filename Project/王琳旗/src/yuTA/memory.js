@@ -9,12 +9,12 @@ const Memory = (props) => {
     useEffect(() => {
         props.dispatch(getMemory());
     }, [])
-    const deleteMemory = (id) => {
+    const deleteMemory = async (id) => {
         let url = '/memory/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/memory')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -43,12 +43,6 @@ const Memory = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteMemory.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                            pathname:"/home/memory/memorychange",
-                                            id:data.id    
-                                        }}>
-                                            <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink> */}
                                     <NavLink to="/home/memory/memoryup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

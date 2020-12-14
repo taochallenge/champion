@@ -9,12 +9,12 @@ const Users = (props) => {
     useEffect(() => {
         props.dispatch(getUsers());
     }, [])
-    const deleteUser = (id) => {
+    const deleteUser = async (id) => {
         let url = '/user/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/users')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -65,12 +65,6 @@ const Users = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteUser.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                            pathname:"/home/users/userschange",
-                                            id:data.id
-                                        }}>
-                                            <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink> */}
                                     <NavLink to="/home/users/usersup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

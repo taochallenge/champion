@@ -7,16 +7,17 @@ class CentenceUp extends Component {
     super(props);
     this.state = {};
   }
-  AddSubmit = (e) => {
+  AddSubmit = async (e) => {
     e.preventDefault();
-    fetch('/centence', {
+    await fetch('/centence', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'
       },
       body: JSON.stringify(this.state)
     })
-    this.props.history.push('/home/centence')
+    await this.props.history.push('/home/centence')
+    await this.props.history.go(0)
   }
   AddContent = (e) => {
     this.setState({

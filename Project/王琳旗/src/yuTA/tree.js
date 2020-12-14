@@ -9,12 +9,12 @@ const Tree = (props) => {
     useEffect(() => {
         props.dispatch(getTree());
     }, [])
-    const deleteTree = (id) => {
+    const deleteTree = async (id) => {
         let url = '/tree/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/tree')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -49,12 +49,6 @@ const Tree = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteTree.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                            pathname:"/home/tree/treechange",
-                                            id:data.id
-                                        }}>
-                                            <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink> */}
                                     <NavLink to="/home/tree/treeup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

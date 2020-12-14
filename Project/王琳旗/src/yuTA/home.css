@@ -10,7 +10,7 @@
     height: 100px;
     background-color:#CDCDFC;
     position: fixed;
-    z-index: 999;
+    z-index: 500;
 }
 .headerUsers p{
     font-size: 32px;

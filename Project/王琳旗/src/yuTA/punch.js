@@ -10,12 +10,12 @@ const Punch = (props) => {
     useEffect(() => {
         props.dispatch(getPunch());
     }, [])
-    const deletePunch = (id) => {
+    const deletePunch = async (id) => {
         let url = '/punch/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/punch')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>

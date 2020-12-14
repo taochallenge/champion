@@ -9,12 +9,12 @@ const Centence = (props) => {
     useEffect(() => {
         props.dispatch(getCentence());
     }, [])
-    const deleteCentnece = (id) => {
+    const deleteCentnece = async (id) => {
         let url = '/centence/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/centence')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -47,12 +47,6 @@ const Centence = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteCentnece.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                        pathname:"/home/centence/centencechange",
-                                        id:data.id
-                                    }}>
-                                        <img src={require('../imgs/xg.png')} alt=''></img>
-                                    </NavLink> */}
                                     <NavLink to="/home/centence/centenceup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

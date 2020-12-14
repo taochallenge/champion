@@ -7,16 +7,17 @@ class DiaryUp extends Component {
     super(props);
     this.state = {};
   }
-  AddSubmit = (e) => {
+  AddSubmit = async (e) => {
     e.preventDefault();
-    fetch('/diaries', {
+    await fetch('/diaries', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'
       },
       body: JSON.stringify(this.state)
     })
-    this.props.history.push('/home/diary')
+    await this.props.history.push('/home/diary')
+    await this.props.history.go(0)
   }
   AddContent = (e) => {
     this.setState({
@@ -66,7 +67,7 @@ class DiaryUp extends Component {
           </div>
           <div className='UsersupInp'>
             <p>日记时间:</p>
-            <input type='date' value={this.state.time} onChange={this.AddTime} placeholder='请输入日记时间' />
+            <input type='datetime' value={this.state.time} onChange={this.AddTime} placeholder='请输入日记时间' />
           </div>
           <div className='UsersupInp'>
             <p>日记创作者:</p>

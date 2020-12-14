@@ -15,7 +15,6 @@ const Home = ({ routes }) => {
                         <RouteWithSubRoutes {...route} key={i} />
                     ))
                 }
-                <Redirect from='/home' to='/home/users' />
                 <ul>
                     <li><NavLink to="/home/users"><p>用户管理</p></NavLink></li>
                     <li><NavLink to="/home/diary"><p>日记管理</p></NavLink></li>

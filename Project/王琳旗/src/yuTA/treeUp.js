@@ -7,16 +7,17 @@ class TreeUp extends Component {
     super(props);
     this.state = {};
   }
-  AddSubmit = (e) => {
+  AddSubmit = async (e) => {
     e.preventDefault();
-    fetch('/tree', {
+    await fetch('/tree', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'
       },
       body: JSON.stringify(this.state)
     })
-    this.props.history.push('/home/tree')
+    await this.props.history.push('/home/tree')
+    await this.props.history.go(0)
   }
   AddContent = (e) => {
     this.setState({

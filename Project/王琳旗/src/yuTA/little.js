@@ -9,12 +9,12 @@ const Little = (props) => {
     useEffect(() => {
         props.dispatch(getLittle());
     }, [])
-    const deleteLittle = (id) => {
+    const deleteLittle = async (id) => {
         let url = '/little/' + id;
-        fetch(url, {
+        await fetch(url, {
             method: 'DELETE'
         });
-        props.history.push('/home/little')
+        await props.history.go(0)
     }
     return (
         <table width='1200px' rules='rows'>
@@ -49,12 +49,6 @@ const Little = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt='' onClick={deleteLittle.bind(this, data.id)}></img>
-                                    {/* <NavLink to={{
-                                            pathname:"/home/little/littlechange",
-                                            id:data.id
-                                        }}>
-                                            <img src={require('../imgs/xg.png')} alt=''></img>
-                                        </NavLink> */}
                                     <NavLink to="/home/little/littleup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

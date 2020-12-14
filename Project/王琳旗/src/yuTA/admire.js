@@ -43,12 +43,6 @@ const Admire = (props) => {
                                         ))
                                     }
                                     <img src={require('../imgs/sc.png')} alt=''></img>
-                                    {/* <NavLink to={{
-                                        pathname:"/home/admire/admirechange",
-                                        id:data.id
-                                    }}>
-                                        <img src={require('../imgs/xg.png')} alt=''></img>
-                                    </NavLink> */}
                                     <NavLink to="/home/admire/admireup">
                                         <img src={require('../imgs/tj.png')} alt=''></img>
                                     </NavLink>

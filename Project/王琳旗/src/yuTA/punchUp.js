@@ -7,16 +7,17 @@ class PunchUp extends Component {
     super(props);
     this.state = {};
   }
-  AddSubmit = (e) => {
+  AddSubmit = async (e) => {
     e.preventDefault();
-    fetch('/punch', {
+    await fetch('/punch', {
       method: 'POST',
       headers: {
         'content-type': 'text/plain'
       },
       body: JSON.stringify(this.state)
     })
-    this.props.history.push('/home/punch')
+    await this.props.history.push('/home/punch')
+    await this.props.history.go(0)
   }
   AddTime = (e) => {
     this.setState({
