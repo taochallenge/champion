@@ -1,0 +1,61 @@
+#UsersupDiv{
+    position: absolute;
+    top:-104px;
+    left:300px;
+    width: 500px;
+    height: 630px;
+    background-color: white;
+    border: 3px solid #CDCDFC;
+    border-radius: 10px;
+    z-index: 999;
+}
+.Usersuphead{
+    background-color: white;
+    height: 50px;
+    width: 501px;
+    border-radius: 6px 6px 0px 0px;
+}
+.Usersuphead p{
+    color: #CDCDFC;
+    font-size: 20px;
+    line-height: 50px;
+    position: relative;
+    left: -160px;
+}
+.UsersupInp{
+    padding-top: 13px;
+    color: white;
+    text-align: left;
+    margin-left: 100px;
+}
+.UsersupInp p{
+    width: 90px;
+    float: left;
+}
+.UsersupB{
+    position: absolute;
+    bottom: 5px;
+}
+.UsersupB:last-child{
+    position: absolute;
+    bottom: 5px;
+    left: 200px;
+}
+.UsersupB input{
+    background-color: white;
+    color: #CDCDFC;
+    border: none;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-left: 100px;
+    float: left;
+    
+}
+.Usersupmain{
+    background-color: #CDCDFC;
+    width: 501px;
+    height: 581px;
+    border-radius: 0px 0px 6px 6px;
+}
