@@ -9,7 +9,6 @@ import Tree from './tree';
 import Users from './users';
 import DiaryUp from './diaryUp';
 import CentenceUp from './centenceUp';
-import CommentUp from './commentUp';
 import LittleUp from './littleUp';
 import MemoryUp from './memoryUp';
 import TreeUp from './treeUp';
@@ -48,12 +47,6 @@ const routes=[
             {
                 path:'/home/comment',
                 component:Comment,
-                routes:[
-                    {
-                        path:'/home/comment/commentup',
-                        component:CommentUp,
-                    },
-                ]
             },
             {
                 path:'/home/little',

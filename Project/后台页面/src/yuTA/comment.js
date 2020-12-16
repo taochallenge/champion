@@ -3,7 +3,6 @@ import './users.css'
 import getComment from '../GetData/getComment'
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom'
-import { RouteWithSubRoutes } from '../App';
 
 const Comment = (props) => {
     useEffect(() => {
@@ -23,7 +22,6 @@ const Comment = (props) => {
                     <th>评论编号</th>
                     <th>评论内容</th>
                     <th>评论时间</th>
-                    <th>评论创作者</th>
                     <th>操作</th>
                 </tr>
             </thead>
@@ -35,17 +33,8 @@ const Comment = (props) => {
                                 <td>{data.id}</td>
                                 <td>{data.content}</td>
                                 <td>{data.time}</td>
-                                <td>{data.myname}</td>
                                 <td>
-                                    {
-                                        props.routes.map((route, i) => (
-                                            <RouteWithSubRoutes {...route} key={i} />
-                                        ))
-                                    }
                                     <img src={require('../imgs/sc.png')} alt=''  onClick={deleteComment.bind(this, data.id)}></img>
-                                    <NavLink to="/home/comment/commentup">
-                                        <img src={require('../imgs/tj.png')} alt=''></img>
-                                    </NavLink>
                                 </td>
                             </tr>
                         )
