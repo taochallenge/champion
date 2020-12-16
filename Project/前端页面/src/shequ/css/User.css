@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#all1{
+    /* background: url(../../imgs/riji.jpeg); */
+    background-color: white;
+    height: 232px;
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+}
+#nav1{
+    height:50px;
+    width: 100%;
+}
+#da>img{   
+    height:30px;
+    width:30px;
+}
+#da{
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#text{
+    display: inline-block;
+    font-size: 23px;
+    margin-left: 140px;
+    position: relative;
+    top:-7px;
+}
+#line1{
+    height: 1px;
+    background-color: #BBBBBB;
+    width:90%;
+    margin: 0 auto;
+}
+#ziliao{
+    height:140px;
+    width:100%;
+}
+#touxiang>img{
+    height:100px;
+    width:100px;
+}
+#touxiang{   
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    top:20px;
+    left:25px;
+    display: inline-block;
+}
+#shuju{
+    position: relative;
+    top:-75px;
+    left:150px;
+    font-size: 16px;
+}
+#gzs{
+    display: inline-block;
+    margin-left: 20px;
+}
+#fss{
+    display: inline-block;
+    margin-left: 48px;
+}
+#xms{
+    display: inline-block;
+    margin-left: 40px;
+}
+#txt{
+    position: relative;
+    top:-70px;
+    left:140px;
+    font-size: 16px;
+
+    display: inline-block;
+}
+#gz{
+    display: inline-block;
+    margin-left: 20px;
+}
+#fs{
+    display: inline-block;
+    margin-left: 35px;
+}
+#xm{
+    display: inline-block;
+    margin-left: 35px;
+}
+#write{
+    height:28px;
+    width:180px;
+    background-color: #79A1F7;
+    display: inline-block;
+    position: relative;
+    top:-25px;
+    left:-30px;
+    border-radius: 18px;
+    text-align: center;
+}
+#write1{
+    display: inline-block;
+    color:white;
+    font-size:15px;
+    margin-top:3px;
+}
+#content{
+    width:100%;
+    height:40px;
+    display: flex;
+}
+#zhong{
+    display: inline-block;
+    margin-left: 40px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+    padding-bottom: 10px;
+}
+#zhong:link{
+    border-bottom:3px solid #5DD2FE;
+}
+#zhong:visited{
+    border-bottom:3px solid #5DD2FE;
+}
+#zhong:hover{
+    border-bottom:3px solid #5DD2FE;
+}
+#zhong:active{
+    border-bottom:3px solid #5DD2FE;
+}
+
+
+#shou{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+    padding-bottom: 10px;
+}
+#shou:link{
+    border-bottom:3px solid #5DD2FE;
+}
+#shou:visited{
+    border-bottom:3px solid #5DD2FE;
+}
+#shou:hover{
+    border-bottom:3px solid #5DD2FE;
+}
+#shou:active{
+    border-bottom:3px solid #5DD2FE;
+}
+#xian{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top:10px;
+    font-size:16px;
+    color:#323030;
+    padding-bottom: 10px;
+}
+#xian:link{
+    border-bottom:3px solid #5DD2FE;
+}
+#xian:visited{
+    border-bottom:3px solid #5DD2FE;
+}
+#xian:hover{
+    border-bottom:3px solid #5DD2FE;
+}
+#xian:active{
+    border-bottom:3px solid #5DD2FE;
+}

@@ -1,0 +1,17 @@
+button{
+    color: #298df8;
+    border: none;
+    background-color: white;
+}
+#rj{
+    position: absolute;
+    top: 55px;
+    border:none;
+    background-image: url(../imgs/ball.jpg);
+}
+#ctime{
+    width: 200px;
+    height: 30px;
+    margin-top: 380px;
+    color: rgb(245,245,249);
+}

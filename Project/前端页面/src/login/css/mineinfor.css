@@ -1,0 +1,92 @@
+.we-all {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url("../img/we-1.jpeg");
+    background-size: 100vw;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.ret {
+    width: 50px;
+    height: 50px;
+    background: url("../img/return.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.shit {
+    width: 100%;
+    height: 90vh;
+}
+
+.wetxt {
+    width: 80vw;
+    height: 7vh;
+    line-height: 7vh;
+    background-color: white;
+    color: #FFAEB9;
+    border: 0;
+    border-radius: 6vw;
+    margin: 2.5vh 0 0 10vw;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+}
+
+.stxt {
+    width: 40vw;
+    font-size: 15px;
+    line-height: 7vh;
+    font-family: Georgia, Serif;
+    margin-left: 3vw;
+    float: left;
+}
+
+.date {
+    width: 30vw;
+    height: 7vh;
+    /* border: 1px solid red; */
+    float: left;
+}
+
+.head {
+    width: 13vw;
+    height: 7vh;
+    border-radius: 7vw;
+    /* border: 1px solid red; */
+    float: left;
+    margin-left: 15vw;
+}
+
+.name {
+    width: 30vw;
+    height: 7vh;
+    /* border: 1px solid red; */
+    float: left;
+}
+
+.birth {
+    width: 30vw;
+    height: 7vh;
+    /* border: 1px solid red; */
+    float: left;
+}
+
+.wetext {
+    width: 80vw;
+    height: 15vh;
+    font-family: Georgia, Serif;
+    font-size: 16px;
+    line-height: 7vh;
+    background-color: white;
+    color: #FFAEB9;
+    border: 0;
+    border-radius: 6vw;
+    margin: 3vh 0 0 10vw;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+}
+
+.wetext:focus {
+    outline: none
+}

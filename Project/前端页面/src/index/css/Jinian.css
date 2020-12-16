@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.memory{
+    width: 100%;
+    background-size: 100vw;
+    background-image: url(../imgs/battle.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.jinian-title{
+    width: 100%;
+    height: 80px;
+    margin-top:150px;
+    /* border:1px solid red; */
+}
+#jinian-header{
+    color: white;
+    font-size: 22px;
+    font-weight: 800px;
+    text-align: center;
+}
+#jinian-time{
+    margin-top: 20px;
+    font-size:18px;
+    color: white;
+    text-align: center;
+}
+#jinian-time>span{
+    color: white;
+    font-size: 28px;
+    font-weight: 800px;
+}
+
+.mind{
+    width: 100%;
+    margin-top: 120px;  
+}
+#jinian-can{
+    width: 90%;
+    margin: 15px auto;
+    height: 80px;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+#jinian-tx{
+    margin-left:10px;
+    margin-top:25px;
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+}
+#jinian-tx>img{
+    height:30px;
+    width:30px;
+}
+#jinian-ct{
+    width: 270px;
+    height: 60px;
+    position: relative;
+    left: 50px;
+    top:-50px; 
+}
+#jinian-name{
+    width: 220px;
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    display:inline-block;
+}
+#jinian-click{
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    color: white;
+
+}
+#jinian-word{
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+    position: relative;
+    top:-68px;
+    left: 220px;
+    color: white;
+    display: inline-block;
+}
+#jinian-countdown{
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    position: relative;
+    top:-36px;
+    left: 80px;
+    color: white;
+    display: inline-block;
+}
+
+
+#b{
+    width: 30px;
+    height: 30px;
+}
+#add{
+    width: 25px;
+    height: 25px;
+}

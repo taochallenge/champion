@@ -1,0 +1,74 @@
+.enter {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2b292a;
+}
+
+.puten {
+    margin-top: 17vh;
+}
+
+.wxl {
+    width: 50px;
+    height: 50px;
+    background: url("../img/return.png");
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    float: left;
+    position: absolute;
+    z-index: 99
+}
+
+.entertitle {
+    width: 100%;
+    height: 10vh;
+    font-size: 40px;
+    font-family: Georgia, Serif;
+    color: #FFAEB9;
+    line-height: 10vh;
+    text-align: center;
+}
+
+.jingcai {
+    width: 100%;
+    height: 10vh;
+    font-size: 15px;
+    line-height: 10vh;
+    text-align: center;
+    font-family: Georgia, Serif;
+}
+
+.import {
+    width: 88vw;
+    height: 7vh;
+    border: 0;
+    border-radius: 5vw;
+    margin: 4vh 0 0 5vw;
+    background-color: rgb(139, 133, 133);
+}
+
+.zues {
+    width: 78vw;
+    height: 6.9vh;
+    border: 0;
+    border-radius: 5vw;
+    margin-left: 5vw;
+    background-color: rgb(139, 133, 133);
+}
+
+.ent-btn {
+    font-family: Georgia, Serif;
+    position: absolute;
+    bottom: 12vh;
+    left: 15vw;
+    width: 70vw;
+    height: 15vw;
+    line-height: 15vw;
+    border-radius: 6vw;
+    font-size: 25px;
+    color: #ee7c8c;
+    border: 1px;
+    background-color: #fff;
+    margin-bottom: 20vh;
+}

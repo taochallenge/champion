@@ -1,0 +1,20 @@
+.timelist {
+    /* border: 1px solid red; */
+    width: 88vw;
+    height: 7vh;
+    border-radius: 5vw;
+    margin-left: 2vw;
+    margin: 4vh 0 0 5vw;
+    background-color: white;
+    text-align: center;
+}
+
+.date-picker-list {
+    border-radius: 5vw;
+    margin-left: 4vw;
+}
+
+.birtex {
+    color: #f09ec4;
+    font-size: 15px;
+}

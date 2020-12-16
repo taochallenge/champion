@@ -1,0 +1,37 @@
+#back1{
+    color: #769FFB;
+}
+#jinian-submit{
+    margin-top: 50px;
+    margin-left: 110px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #769FFB;
+    text-align: center;
+    border:none;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.editor-list{
+    width: 100%;
+    height: 40px;
+}
+#editor-one{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.date-picker-list{
+    width: 100%;
+    height: 40px;
+}
+#time-one{
+    width: 30px;
+    height: 30px;
+}
+

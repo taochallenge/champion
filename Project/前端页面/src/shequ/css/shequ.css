@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#shequ-nav{
+    width:100%;
+    height:50px;
+    background-color: white;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+.wo{
+    width:40px;
+    height:40px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+#tui{
+    color:black;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 130px;
+    margin-top:-50px;
+    position: relative;
+    top:-26px;
+    padding-bottom: 10px;
+}
+#tui:link{
+    border-bottom:3px solid #5DD2FE;
+}
+#tui:visited{
+    border-bottom:3px solid #5DD2FE;
+}
+#tui:hover{
+    border-bottom:3px solid #5DD2FE;
+}
+#tui:active{
+    border-bottom:3px solid #5DD2FE;
+}
+#guan{
+    color:black;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 220px;
+    position: absolute;
+    top:17px;
+    padding-bottom: 10px;
+}
+#guan:link{
+    border-bottom:3px solid #5DD2FE;
+}
+#guan:visited{
+    border-bottom:3px solid #5DD2FE;
+}
+#guan:hover{
+    border-bottom:3px solid #5DD2FE;
+}
+#guan:active{
+    border-bottom:3px solid #5DD2FE;
+}

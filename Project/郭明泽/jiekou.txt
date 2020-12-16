@@ -1,6 +1,0 @@
-获取用户数据接口：http://www.cgwzz.top:1234/user
-获取每日一句接口：http://www.cgwzz.top:1234/centence
-获取记录日记接口：http://www.cgwzz.top:1234/diaries
-获取20件小事接口：http://www.cgwzz.top:1234/little
-获取纪念日的接口：http://www.cgwzz.top:1234/memory
-获取我种的树接口：http://www.cgwzz.top:1234/tree
