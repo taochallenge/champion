@@ -46,7 +46,7 @@ const Users = (props) => {
                                 <td>{data.birthday}</td>
                                 <td>{data.lovedata}</td>
                                 <td>{data.secret}</td>
-                                <td>{data.fans}</td>
+                                <td>{data.tel}</td>
                                 <td>{data.password}</td>
                                 <td>
                                     {
