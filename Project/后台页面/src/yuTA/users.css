@@ -15,3 +15,8 @@ table tr{
 table tr img{
     margin-left: 15px;
 }
+.UsersImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}

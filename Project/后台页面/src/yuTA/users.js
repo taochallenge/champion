@@ -21,19 +21,14 @@ const Users = (props) => {
             <thead>
                 <tr bgcolor='#E6E6E6'>
                     <th>用户编号</th>
+                    <th>用户头像</th>
                     <th>另一半编号</th>
                     <th>用户昵称</th>
                     <th>用户性别</th>
-                    <th>用户年龄</th>
-                    <th>用户位置</th>
                     <th>用户生日</th>
                     <th>相恋日期</th>
                     <th>配对码</th>
-                    <th>粉丝数</th>
-                    <th>关注数</th>
-                    <th>羡慕树</th>
                     <th>用户电话</th>
-                    <th>用户在线状态</th>
                     <th>用户密码</th>
                     <th>操作</th>
                 </tr>
@@ -44,19 +39,14 @@ const Users = (props) => {
                         return (
                             <tr align='center' key={index} >
                                 <td>{data.id}</td>
+                                <td><img src={data.imgpath} className='UsersImg'/></td>
                                 <td>{data.herid}</td>
                                 <td>{data.myname}</td>
                                 <td>{data.sex == 1 ? '女' : '男'}</td>
-                                <td>{data.age}</td>
-                                <td>{data.location}</td>
                                 <td>{data.birthday}</td>
                                 <td>{data.lovedata}</td>
                                 <td>{data.secret}</td>
                                 <td>{data.fans}</td>
-                                <td>{data.follow}</td>
-                                <td>{data.admire}</td>
-                                <td>{data.tel}</td>
-                                <td>{data.state}</td>
                                 <td>{data.password}</td>
                                 <td>
                                     {

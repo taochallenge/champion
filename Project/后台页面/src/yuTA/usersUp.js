@@ -29,6 +29,11 @@ class UsersUp extends Component {
       id: e.target.value
     })
   }
+  AddImgpath = (e) => {
+    this.setState({
+      imgpath: e.target.value
+    })
+  }
   AddHerid = (e) => {
     this.setState({
       herid: e.target.value
@@ -42,16 +47,6 @@ class UsersUp extends Component {
   AddMyname = (e) => {
     this.setState({
       myname: e.target.value
-    })
-  }
-  AddAge = (e) => {
-    this.setState({
-      age: e.target.value
-    })
-  }
-  AddLocation = (e) => {
-    this.setState({
-      location: e.target.value
     })
   }
   AddBirthday = (e) => {
@@ -70,29 +65,9 @@ class UsersUp extends Component {
       secret: e.target.value
     })
   }
-  AddFans = (e) => {
-    this.setState({
-      fans: e.target.value
-    })
-  }
-  AddFollow = (e) => {
-    this.setState({
-      follow: e.target.value
-    })
-  }
-  AddAdmire = (e) => {
-    this.setState({
-      admire: e.target.value
-    })
-  }
   AddTel = (e) => {
     this.setState({
       tel: e.target.value
-    })
-  }
-  AddState = (e) => {
-    this.setState({
-      state: e.target.value
     })
   }
   render() {
@@ -103,6 +78,10 @@ class UsersUp extends Component {
           <div className='UsersupInp'>
             <p>用户编号:</p>
             <input type='number' value={this.state.id} onChange={this.AddId} placeholder='请输入用户编号' />
+          </div>
+          <div className='UsersupInp'>
+            <p>用户头像:</p>
+            <input type='text' value={this.state.imgpath} onChange={this.AddImgpath} placeholder='请输入用户头像' />
           </div>
           <div className='UsersupInp'>
             <p>另一半编号:</p>
@@ -117,14 +96,6 @@ class UsersUp extends Component {
             <input type='text' value={this.state.sex} onChange={this.AddSex} placeholder='请输入用户性别' />
           </div>
           <div className='UsersupInp'>
-            <p>用户年龄:</p>
-            <input type='number' value={this.state.age} onChange={this.AddAge} placeholder='请输入用户年龄' />
-          </div>
-          <div className='UsersupInp'>
-            <p>用户位置:</p>
-            <input type="text" value={this.state.location} onChange={this.AddLocation} placeholder="请选择地点" />
-          </div>
-          <div className='UsersupInp'>
             <p>用户生日:</p>
             <input type='date' value={this.state.birthday} onChange={this.AddBirthday} placeholder='请输入用户生日' />
           </div>
@@ -137,24 +108,8 @@ class UsersUp extends Component {
             <input type='text' value={this.state.secret} onChange={this.AddSecret} placeholder='请输入配对码' />
           </div>
           <div className='UsersupInp'>
-            <p>粉丝数:</p>
-            <input type='number' value={this.state.fans} onChange={this.AddFans} placeholder='请输入粉丝数' />
-          </div>
-          <div className='UsersupInp'>
-            <p>关注数:</p>
-            <input type='number' value={this.state.follow} onChange={this.AddFollow} placeholder='请输入关注数' />
-          </div>
-          <div className='UsersupInp'>
-            <p>羡慕树:</p>
-            <input type='number' value={this.state.admire} onChange={this.AddAdmire} placeholder='请输入羡慕树' />
-          </div>
-          <div className='UsersupInp'>
             <p>用户电话:</p>
             <input type='tel' value={this.state.tel} onChange={this.AddTel} placeholder='请输入用户电话' />
-          </div>
-          <div className='UsersupInp'>
-            <p>用户在线状态:</p>
-            <input type='number' value={this.state.state} onChange={this.AddState} placeholder='请输入用户在线状态' />
           </div>
           <div className='UsersupInp'>
             <p>用户密码:</p>
