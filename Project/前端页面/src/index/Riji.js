@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getDiary } from './actionCreators';
 import './css/Riji.css'
-
 class Riji extends Component {
     constructor(props){
         super(props);  
@@ -13,59 +12,57 @@ class Riji extends Component {
             id:localStorage['id']
         }
     };
+    deleteRiji = (id) => {    
     
+        fetch('/diaries/'+ id,{
+            method: 'DELETE',            
+        }).then(()=>{this.props.history.go(0)})
+        // this.props.history.go(0)
+    }
     componentDidMount() {
         this.props.dispatch(getDiary(localStorage['id'],localStorage['herid']));
-        // this.props.dispatch(getDiary());
         fetch('/getdiaries',{
             method:'POST',
             body:JSON.stringify(this.state)
         })
+        
     }
-    // handelTree = (e) => {
-    //     e.preventDefault();
-    //     fetch('/getdiaries', {
-    //       method: 'POST',
-    //       headers: {
-    //         'content-type': 'text/plain'
-    //       },
-    //       body: JSON.stringify(this.state)
-    //     })
-    // }
-    // handleChange=(e)=>{
-    //     this.setState({content:e.target.value});
-    // }
     
+   
     render() {
         return ( 
             <div>
-                <div className='riji-tag'>
-                    <NavBar
-                        mode="light"
-                        icon={<Icon type="left" id='back1'/>}
-                        onLeftClick={() => this.props.history.push('/home')}
-                        rightContent={[
-                            <img src={require('./imgs/write.png')} id='riji-one' onClick={() => {
-                                this.props.history.push('/createriji')}} 
-                            />,                    
-                        ]}
-                    >恋爱记录</NavBar>    
-                </div> 
+                <div className='riji'>
+                    <div className='riji-tag'>
+                        <NavBar
+                            mode="light"
+                            icon={<Icon type="left" />}
+                            onLeftClick={() => this.props.history.push('/home')}
+                            rightContent={[
+                                <img src={require('./imgs/write.png')} id='riji-one' onClick={() => {
+                                    this.props.history.push('/createriji')}} 
+                                />,                    
+                            ]}
+                        >恋爱记录</NavBar>    
+                    </div> 
 
-                <div className='book'>
-                {
-                    this.props.rjlist.map((val1)=>(
-                        <div key={val1.id} id='riji-can'>
-                            <div id='riji-tx'>
-                                <img src={val1.imgpath} />
+                    <div className='book'>
+                    {
+                        this.props.rjlist.map((val1)=>(
+                            <div key={val1.id} id='riji-can'>
+                                <div id='riji-tx'>
+                                    <img src={val1.imgpath} />
+                                </div>
+                                <div id='riji-time'>
+                                    {val1.time}
+                                </div>
+                                <div id='riji-btn' onClick = {this.deleteRiji.bind(this,val1.id)}>删除</div>
+                                {/* <div id='riji-btn' onClick = {this.deleteRiji.bind(val1.id)}>删除</div> */}
+                                <textarea  cols='45' rows='6' >{val1.content}</textarea>
                             </div>
-                            <div id='riji-time'>
-                                {val1.time}
-                            </div>
-                            <textarea  cols='48' rows='6' >{val1.content}</textarea>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                    </div>
                 </div>
             </div>   
         )

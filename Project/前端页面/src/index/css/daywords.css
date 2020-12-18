@@ -16,7 +16,7 @@
     color: white;
     line-height: 20px;
     text-align: center;
-    background-color: #e5a3a3;
+    /* background-color: #e5a3a3; */
 }
 #te{
     width: 250px;
@@ -42,7 +42,7 @@
     font-size: 18px;   
 }
 #te-four{
-    margin-top: 10px;
+    margin-top: 16px;
     text-align: center;
     
 }

@@ -10,29 +10,30 @@ class Jinian extends Component {
         super(props);  
     };
     
-    componentDidMount() {
-        this.props.dispatch(getMemory());
+    componentDidMount(){
+        this.props.dispatch(getMemory(localStorage['id'],localStorage['herid']));
     }
-    
+
     render() {
-        console.log(this.props.memory);
         return (
             <div>
                 <div className='memory'>
-                <NavBar
-                    mode="light"
-                    icon={<Icon type="left" id='back1'/>}
-                    onLeftClick={() => this.props.history.push('/home')}
-                    rightContent={[
-                        <img src={require('./imgs/jiahao.png')} id='add' onClick={() => {
-                            this.props.history.push('/create')}} 
-                        />,
-                    ]}
-                    >纪念日</NavBar>
+                    <div className='jinian-nav'>
+                        <NavBar
+                            mode="light"
+                            icon={<Icon type="left"/>}
+                            onLeftClick={() => this.props.history.push('/home')}
+                            rightContent={[
+                                <img src={require('./imgs/jiahao.png')} id='add' onClick={() => {
+                                    this.props.history.push('/create')}} 
+                                />,
+                            ]}
+                            >纪念日</NavBar>
+                    </div>
                     <div className='jinian-title'>
                         <p id='jinian-header'>发现我们的恋爱新世界——遇TA</p>
                         <p id='jinian-time'>
-                            还有<span>340</span>天<span>23</span>时<span>11</span>分
+                            我们的故事从这里开始...
                         </p>
                     </div>
 
@@ -45,9 +46,7 @@ class Jinian extends Component {
                                 </div>
                                 <div id='jinian-ct'>
                                     <div id='jinian-name'>{val2.name}</div>
-                                    <div id='jinian-click'>{val2.time}</div>
-                                    <div id='jinian-word'>已经</div>
-                                    <div id='jinian-countdown'>{val2.countdown}</div>
+                                    <div id='jinian-click'>{val2.time}</div>  
                                 </div>
                             </div>
                         ))

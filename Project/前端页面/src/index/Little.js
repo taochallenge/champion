@@ -82,8 +82,9 @@ class Little extends React.Component {
                 </div>
                 <div className='thing'>{val.name}</div>
                 <div className='describe' >{val.describe}</div>
-                <div className='like'><img src={img3} alt='' style={{ width: '10%', marginTop: '15%' }}></img></div>
-
+                <div className='little-time'>{val.time}&nbsp;&nbsp;{val.place}</div>
+                <div className='like'></div>
+                <img src={img3} alt='' id='xin'></img>
               </div>
               <div className='hidden'>隐藏恋爱任务</div>
 

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/mini-nord.min.css">
+  <title>Titbit Study</title>
+  <style>
+    .alert-box {
+      z-index: 1001;
+      position: fixed;
+      top: 20%;
+      width: 30%;
+      text-align: center;
+      background: #f0f1f3;
+      left: 35%;
+      box-shadow: 0.25rem 0.25rem 0.25rem #afafaf;
+      line-height: 128%;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="window-alert"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-lg-2"></div>
+      <div class="col-sm-12 col-md-10 col-lg-8" style="padding:0.8rem;">
+        <h2 style="margin-bottom: 0.2rem;">titbit和titbit-loader演示</h2>
+        <p>
+          titbit框架和相关扩展的演示项目。通过titbit、titbit-loader、titbit-toolkit等相关扩展完成一个项目结构和接口通信的使用示例。通过实际的代码演示和注释让开发者可以快速上手。
+        </p>
+        <p>
+          需要仔细留意目录结构、注释说明、文件的命名不能有空格以及其他容易引起冲突的字符。在data目录中存在testUser.js是测试用户登录的模拟数据。lib中包括了funcs.js封装了一些函数，lib目录中的token.js实现了用户登录和token验证的基本逻辑。
+        </p>
+        <div style="background-color: #dfdfdf;margin-bottom: 1rem;margin-top: 1rem;padding:0.2rem;">
+
+          <strong>用户页面</strong><br>
+
+          <p>提供用户页面、登录页面和几个测试用户，测试用户的数据在data/testUser.js中。</p>
+
+          <table>
+            <thead>
+              <tr>
+                <td>用户名</td>
+                <td>密码</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>helloworld</td>
+                <td>20201234</td>
+              </tr>
+              <tr>
+                <td>great</td>
+                <td>20182018</td>
+              </tr>
+              <tr>
+                <td>printf</td>
+                <td>20182018</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="text-align: center;">
+            <a href="/user" class="button" style="text-decoration: none;color:#42424f;">
+              Go User Page
+            </a>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <td>扩展</td>
+              <td>说明</td>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>titbit</td>
+            <td>Web服务端框架。
+              <a href="https://gitee.com/daoio/titbit" target="_blank">文档</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>titbit-loader</td>
+            <td>
+              提供自动加载控制器、中间件、模型的功能。控制器中的类就是路由。模型对应数据库的操作。
+              <a href="https://gitee.com/daoio/titbit-loader" target="_blank">文档</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>titbit-toolkit</td>
+            <td>提供一些中间件扩展，这里使用了resource加载静态文件。
+              <a href="https://gitee.com/daoio/titbit-toolkit" target="_blank">文档</a>
+            </td>
+          </tr>
+        </tbody>
+
+        </table>
+
+        <div class="row" style="font-size:90%;color:#676869;margin-top:1rem;">
+          <div class="col-sm-12 col-md-10 col-lg-6" id="loadinfo"></div>
+          <div class="col-sm-12 col-md-10 col-lg-6" id="request-log" style="padding:0.15rem;max-height: 9rem;overflow-y: auto;"></div>
+        </div>
+        <div style="text-align: center;">
+          <button class="small warning" onclick="restart(this);">
+            重启服务
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="small inverse" onclick="apibench(this);">
+            请求测试
+          </button>
+        </div>
+      </div>
+      <div class="col-md-1 col-lg-2"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" style="text-align: center;margin-bottom: 1rem;">
+      <div class="col-sm-1 col-md-2 col-lg-3"></div>
+      <div class="col-sm-10 col-md-8 col-lg-6" style="line-height: 3.4rem;color:#676869;font-size: 86%;">
+        ---- END ----
+      </div>
+      <div class="col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+  </div>
+
+  <script>
+
+    window.alertClose = function () {
+      let a = document.getElementById('window-alert')
+      if (!a) {
+        return
+      }
+      a.innerHTML = ''
+    }
+
+    //重写alert
+    window.alert = function (text, timeout = 0) {
+      let a = document.getElementById('window-alert')
+      if (!a) {
+        return
+      }
+      
+      let closeText = '<button class="small" onclick="window.alertClose(this);">确定</button>'
+
+      if (timeout > 0) {
+        closeText = ''
+        setTimeout(() => {
+          alertClose()
+        }, timeout + 100)
+      }
+
+      a.innerHTML = `<div class="alert-box">
+        <div>${text}</div><br>
+        ${closeText}
+      </div>`
+
+    }
+
+    setInterval(() => {
+      fetch('/server/loadinfo').then(res => {
+        if (!res.ok) {
+          throw new Error(`status : ${res.status}`)
+        }
+        return res.text()
+      }).then(d => {
+        let loadtext = ''
+        loadtext += d.replace(/\n/ig, '<br>').replace(/ /ig, '&nbsp;')
+        document.getElementById('loadinfo').innerHTML = loadtext
+      }).catch(err => {})
+
+    }, 1000);
+
+    async function apibench (t) {
+      let dm = document.getElementById('request-log')
+
+      dm.innerHTML = 'start request...<br>'
+
+      await new Promise((rv, rj) => {
+        setTimeout(() => {
+          rv()
+        }, 1000)
+      })
+
+      t.disabled = true;
+      for (let i = 0; i < 120; i++) {
+        dm.innerHTML += `request ${location.host}/server/test/${i+1}<br>`
+        dm.scrollTop = dm.scrollHeight
+
+        setTimeout(() => {
+          fetch(`/server/test/${i+1}`)
+            .then(res => {
+              return res.text()
+            }).catch(err => {})
+        }, (i+1) *2);
+
+      }
+      t.disabled = false;
+    }
+
+    async function restart(t) {
+
+      let pass = prompt('验证', 'titbit-restart')
+
+      if (pass === '' || pass === null) {
+        return
+      }
+
+      t.disabled = true;
+
+      fetch('/server/restart/' + pass).then(res => {
+        if (!res.ok) {
+          if (res.status === 403) {
+            alert('验证失败')
+          }
+          throw new Error(`status: ${res.status}`)
+        }
+        return res.text()
+      })
+      .then(d => {
+        alert('已重启，请注意PID变化', 2000)
+      })
+      .catch(err => {})
+      .finally(() => {
+        t.disabled = false;
+      })
+
+      
+    }
+
+  </script>
+</body>
+</html>

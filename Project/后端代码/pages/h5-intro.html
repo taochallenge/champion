@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/mini-nord.min.css">
+  <title>Titbit Study - H5简要说明</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-lg-2"></div>
+      
+      <div class="col-sm-12 col-md-10 col-lg-8" style="padding:0.8rem;">
+        
+          <header>
+            <a href="/" class="button">主页</a>
+            <a href="/user" class="button">用户</a>
+          </header>
+          <div id="h5-intro"></div>
+
+          <div style="padding:0.5rem;background-color: #dfdfdf;font-size:86%;color:#676869;">
+            以上部分内容是通过接口请求返回的，请注意查看前后端的代码。
+          </div>
+      </div>
+
+      <div class="col-md-1 col-lg-2"></div>
+    </div>
+  </div>
+
+  <script>
+    fetch('/h5/intro').then(res => {
+      if (!res.ok) {
+        throw new Error(`${res.status} : ${res.statusText}`)
+      } else {
+        return res.text()
+      }
+    }).then(d => {
+      document.getElementById('h5-intro').innerHTML = d
+    }).catch(err => {
+      console.error(err)
+    })
+  </script>
+</body>
+</html>

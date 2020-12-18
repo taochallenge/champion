@@ -3,13 +3,6 @@ import './css/Tui.css'
 import './css/details.css'
 import { getContent } from './actionCreator';
 import { connect } from 'react-redux';
-// var date = new Date();
-// var year = date.getFullYear(); 
-// var month = date.getMonth()+1;
-// var day = date.getDate();
-// var hours=date.getHours();
-// var minutes=date.getMinutes();
-// var time=year+'-'+month+'-'+day+'  '+hours+':'+minutes
 Date.prototype.Format = function (fmt) { // author: meizz
     var o = {
         "M+": this.getMonth() + 1, // 月份
@@ -64,6 +57,7 @@ class Details extends Component {
     }
     render() {
         console.log(typeof(this.state.comments));
+        console.log(localStorage['treeimg'])
         return (
             <div>
                 <div id='details-nav'>
@@ -84,10 +78,15 @@ class Details extends Component {
                     <div id='kuai-time'>热恋ing</div>
                     <textarea rows='2' id='val1' readonly='readonly'>{localStorage['content']}</textarea>
                     {
-                        localStorage['treeimg'] == null
-                            ? ''
-                            : <img id='kuai-imgpath' src={localStorage['treeimg']} />
+                        localStorage['treeimg'] != 'null'                       
+                        ? <img id='kuai-imgpath' src={localStorage['treeimg']} />
+                        : ''
                     }
+                    {/* {
+                        this.props.location.treeing == null
+                            ? ''
+                            : <img id='kuai-imgpath' src={this.props.location.treeing} />
+                    } */}
 
                 </div>
                 <div id='details-middle'>

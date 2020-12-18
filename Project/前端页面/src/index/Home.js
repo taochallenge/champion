@@ -29,18 +29,6 @@ class Home extends React.Component{
           <p>写日记</p>
         </div>
 
-        <div id='talk'>
-          <img 
-
-            src={require('./imgs/liaotian.png')}
-            onClick={() => this.props.history.push('/photo')}
-
-            src={require('./imgs/liaotian.png')}   
-
-          />
-          <p>时光相册</p>
-        </div>
-
         <div id='sweet'>
           <img 
             src={require('./imgs/rili.png')}

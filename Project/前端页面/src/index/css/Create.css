@@ -1,6 +1,3 @@
-#back1{
-    color: #769FFB;
-}
 #jinian-submit{
     margin-top: 50px;
     margin-left: 110px;
@@ -15,23 +12,31 @@
     font-size: 18px;
 }
 
-.editor-list{
-    width: 100%;
-    height: 40px;
-}
 #editor-one{
     width: 30px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 7px;
+    
     margin-left: 15px;
+    display: inline-block;
+}
+#editor{
+    position: relative;
+    top: -8px;
+    left: 15px;
+    display: inline-block;
+}
+#editor>input{
+    width: 250px;
+    height: 25px;
+    border: none;
 }
 
-.date-picker-list{
-    width: 100%;
-    height: 40px;
-}
 #time-one{
     width: 30px;
     height: 30px;
 }
-
+.am-list-extra{
+    position: absolute;
+    left: 45px;
+}

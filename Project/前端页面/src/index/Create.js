@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import './css/Jinian.css'
 import './css/Create.css'
 
+
 const nowTimeStamp = Date.now();
 const now = new Date(nowTimeStamp);
 const utcNow = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
@@ -17,13 +18,6 @@ if (minDate.getDate() !== maxDate.getDate()) {
     minDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
 }
 
-function formatDate(date) {
-    const pad = n => n < 10 ? `0${n}` : n;
-    const dateStr = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-    const timeStr = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
-    return `${dateStr} ${timeStr}`;
-}
-
 class Create extends Component {
     constructor(props) {
         super(props)
@@ -32,9 +26,8 @@ class Create extends Component {
             hour: 0,
             minute: 0,
             second: 0,
-
             date: now,
-            // time: now,
+            time: now,
             utcDate: utcNow,
             dpValue: null,
             customChildValue: null,
@@ -51,7 +44,9 @@ class Create extends Component {
             },
             body: JSON.stringify({
                 name: this.state.name,
-                time: this.state.date.toLocaleDateString().split('/').join('-'),
+                time: this.state.date.toLocaleDateString().split('/').join('-')+' '+String(this.state.date).slice(16,21),
+                uid: localStorage['id'],
+                // countdown: this.state.day + '天' + this.state.hour + '时' + this.state.minute + '分' + this.state.second + '秒',
                 countdown: this.state.day + '天' + this.state.hour + '时' + this.state.minute + '分' + this.state.second + '秒',
             })
         })
@@ -60,40 +55,7 @@ class Create extends Component {
                 this.props.history.push('/Jinian')
             })
     }
-    componentDidUpdate() {
-        console.log(this.state.day)
-        console.log(String(this.state.date).slice(16,21))
-        // console.log(''+this.state.date.toLocaleDateString().split('/').join('-')+' '+String(this.state.date).slice(16,21));
-        // const end1 = Date.parse(new Date('2020-12-14 24:00'))
-        // console.log(end1);
-        let e = String(this.state.date.toLocaleDateString().split('/').join('-')+' '+String(this.state.date).slice(16,21))
-        console.log(e);
-        const end = new Date(e).getTime()
-        console.log(end);
-        // const end = Date.parse(String(new Date(this.state.date.toLocaleDateString().split('/').join('-')+' '+String(this.state.date).slice(16,19))))
-        this.countFun(end);
-    }
-    countFun = (end) => {
-        let now_time = Date.parse(new Date());
-        var remaining = now_time-end;
-        
-        this.timer = setInterval(() => {
-            if (remaining > 1000) {
-                remaining -= 1000;
-                let day = Math.floor((remaining / 1000 / 3600) / 24);
-                let hour = Math.floor((remaining / 1000 / 3600) % 24);
-                let minute = Math.floor((remaining / 1000 / 60) % 60);
-                let second = Math.floor(remaining / 1000 % 60);
-
-                this.setState({
-                    day: day,
-                    hour: hour < 10 ? '0' + hour : hour,
-                    minute: minute < 10 ? '0' + minute : minute,
-                    second: second < 10 ? '0' + second : second
-                })
-            }
-        }, 1000)
-    }
+    
 
     handleChange = (e) => {
         this.setState({
@@ -111,7 +73,8 @@ class Create extends Component {
                         onLeftClick={() => this.props.history.push('/jinian')}
                     >创建纪念日</NavBar>
                     <List>
-                        <img src={require('./imgs/editor.png')} id='time-one' />
+                        <img src={require('./imgs/editor.png')} id='editor-one' />
+                        <div id='editor'>
                         <input
                             placeholder="这是你和TA的什么纪念日"
                             id='jn'
@@ -120,7 +83,7 @@ class Create extends Component {
                             onChange={this.handleChange}
                         />
 
-
+                        </div>
                     </List>
                     <List>
                         <DatePicker
@@ -132,7 +95,6 @@ class Create extends Component {
                             </List.Item>
                         </DatePicker>
                     </List>
-                    {/* <input onChange={this.countFun } /> */}
 
                     <div type='submit'
                         value='发布'

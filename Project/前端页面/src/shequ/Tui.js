@@ -47,7 +47,7 @@ const Tui = (props) => {
                                 : <img src={require('../imgs/xm.png')}></img>
                         }
                     </div>
-                    <div id='xianmu-txt'>{val1.countadmire}羡慕</div>
+                    <div id='xianmu-txt'>羡慕</div>
                     <div id='shoucang'
                         onClick={() => {
                             props.dispatch({
@@ -64,7 +64,7 @@ const Tui = (props) => {
                                 : <img src={require('../imgs/sc.png')}></img>
                         }
                     </div>
-                    <div id='shoucang-txt'>{val1.collect}收藏</div>
+                    <div id='shoucang-txt'>收藏</div>
                     <div id='pinglun' onClick={() => {
                         localStorage['treeid']=val1.id
                         localStorage['src']=val1.userimg

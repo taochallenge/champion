@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/mini-nord.min.css">
+  <title>Titbit Study</title>
+  <style>
+    .userinfo {
+      line-height: 3.2rem;
+      background-color: #dfdfdf;
+      margin-bottom: 0.6rem;
+    }
+
+    .user-card {
+      padding: 0.3rem;
+      margin: 0.15rem;
+      box-shadow: 0.25rem 0.25rem 0.2rem #cfcfcf;
+    }
+  </style>
+</head>
+<body>
+  <div id="window-alert"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-lg-2"></div>
+      
+      <div class="col-sm-12 col-md-10 col-lg-8" style="padding:0.8rem;">
+        
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-8">
+            <header>
+              <a href="/" class="button">主页</a>
+              <a href="/h5" class="button">关于H5</a>
+            </header>
+          </div>
+          <div class="col-sm-4 colh-md-6 col-lg-4">
+            <div id="userinfo" class="userinfo"></div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center;margin-top: 1.5rem;">
+          <p style="font-size:90%;color:#565758;">用户列表</p>
+        </div>
+        <div class="row" id="userlist"></div>
+
+        <div style="color:#676869;background-color: #dfdfdf;font-size:86;padding:1rem;margin:0.5rem;margin-top:1.5rem;">
+          user页面会检测是否登录，通过检测token是否存在，以及通过userinfo查看登录是否超时。如果验证失败则会跳转到登录页面，在这之前，则需要先清除存到localeStorage的信息。
+          而退出操作则非常简单，只需要清除登录会话数据并跳转到login页面。
+        </div>
+      </div>
+
+      <div class="col-md-1 col-lg-2"></div>
+    </div>
+  </div>
+  <script>
+
+    function getToken () {
+      return localStorage.getItem('token') || ''
+    }
+
+    function getMyInfo () {
+      let uinfo = localStorage.getItem('userinfo')
+      if (uinfo) {
+        try {
+          return JSON.parse(uinfo)
+        } catch (err) {
+          return null
+        }
+      }
+      return null
+    }
+
+    function checkLogin() {
+      let tk = getToken()
+      if (!tk) {
+        location.href = '/login'
+        return
+      }
+
+      let uinfo = getMyInfo()
+
+      if (uinfo === null) {
+        location.href = '/login'
+      } else {
+        //登录超时
+        if (uinfo.time + uinfo.expires < Date.now()) {
+          localStorage.removeItem('token')
+          localStorage.removeItem('userinfo')
+          location.href = '/login'
+        }
+      }
+    }
+
+    //检测是否登录并跳转
+    checkLogin()
+
+    function apicall (path, options = {}) {
+      let token = getToken()
+      let q = '?'
+      if (path.indexOf('?') > 0) {
+        q = '&'
+      }
+      path = `${path}${q}token=${token}`
+
+      return fetch(path, options).then(async res => {
+        
+        if (!res.ok) {
+          let errtext = await res.text()
+          throw new Error(`${res.status} : ${errtext}`)
+        } else {
+          return res.text()
+        }
+
+      })
+
+    }
+
+    function getUserInfo (id) {
+
+      return apicall('/user/info/'+id).then(d => {
+        let uinfo = JSON.parse(d)
+        showUserInfo(uinfo)
+      })
+      .catch(err => {
+        alert(err.message)
+      })
+
+    }
+
+    function showUserInfo (u) {
+      let html = `
+        &nbsp;${u.nickname} [${u.id}]
+        <a href="javascript:logout(this);" style="color:#df5621;text-decoration:none;">
+          退出
+        </a>
+      `
+      document.getElementById('userinfo').innerHTML = html
+    }
+
+    function logout () {
+      if (!confirm('确定退出？')) {
+        return
+      }
+      localStorage.removeItem('token')
+      localStorage.removeItem('userinfo')
+      location.href = '/login'
+    }
+
+    function getUserList () {
+      apicall('/user/info').then(d => {
+        showUsers(JSON.parse(d) )
+      }).catch(err => {
+        alert(err.message)
+      })
+    }
+
+    function showUsers (ulist) {
+      
+      let html = ''
+
+      for (let i = 0; i < ulist.length; i++) {
+        html += `
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class=" user-card">
+              <h4>${ulist[i].nickname}</h4>
+              <p>ID ${ulist[i].id}</p>
+            </div>
+          </div>
+        `
+      }
+      document.getElementById('userlist').innerHTML = html
+    }
+
+    window.onload = () => {
+      getUserInfo('self')
+      getUserList()
+    }
+
+  </script>
+</body>
+</html>

@@ -56,14 +56,15 @@ const getWords = (time) => {
     }
 }
 
-const getMemory = (memory) => {
+const getMemory = (id,herid) => {
     return (dispatch) => {
-        let url = '/memory';
+        let url = '/getmemory';
         fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            method: 'POST',
+            body:JSON.stringify({
+                id:id,
+                herid:herid
+            })
         })
         .then(res => res.json())
         .then(res => {
@@ -74,4 +75,23 @@ const getMemory = (memory) => {
         })
     }
 }
-export {getDiary,getLittle,getWords,getMemory}
+const getPhoto = (id,herid) => {
+    return (dispatch) => {
+        let url = '/photo';
+        fetch(url, {
+            method: 'POST',
+            body:JSON.stringify({
+                id:id,
+                herid:herid
+            })
+        })
+        .then(res => res.json())
+        .then(res => {
+            dispatch({
+                type: 'GETPHOTO',
+                photo: res
+            })
+        })
+    }
+}
+export {getDiary,getLittle,getWords,getMemory,getPhoto}

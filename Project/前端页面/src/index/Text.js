@@ -152,15 +152,6 @@ class Test extends Component {
       };
     });
     this.countt()
-    fetch('/setpunch',{
-      method:'POST',
-      body:JSON.stringify({
-        id:localStorage['id'],
-        time:dayNum,
-        count:count
-      })
-    })
-
     
   };
   daka = (dateItem, i, j) => (

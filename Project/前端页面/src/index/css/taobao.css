@@ -49,7 +49,7 @@
 .img{
     width: 100%;
     height: 60%;
-    border: 1px solid gray
+    border-bottom: 1px solid gray
 }
 .record{
     color: gray;
@@ -71,6 +71,11 @@
 .describe{
     font-size: 15px;
     margin-top: 5%;
+}
+.little-time{
+    margin-top: 5%;
+    font-size: 10px;
+    color: #ccc;
 }
 .hidden{
     text-align: center;

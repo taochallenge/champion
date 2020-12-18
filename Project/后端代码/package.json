@@ -1,0 +1,21 @@
+{
+  "name": "tqs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.5.1",
+    "psqlorm": "^4.0.3",
+    "titbit": "^21.9.0",
+    "titbit-api": "^1.1.0",
+    "titbit-httpc": "^1.0.2",
+    "titbit-loader": "^21.3.1",
+    "titbit-toolkit": "^2.1.8"
+  }
+}

@@ -12,7 +12,8 @@ export default class Code extends Component {
         fetch('/clearher',{
             method:'POST',
             body:JSON.stringify({
-                id:localStorage['id']
+                id:localStorage['id'],
+                herid:localStorage['herid']
             })
         })
         this.props.history.push('/enter')

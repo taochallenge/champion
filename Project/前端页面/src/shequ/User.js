@@ -35,8 +35,8 @@ const User = ({routes}) => {
                         <div id='touxiang'><img src={imgpath}/></div>
                         <div id='shuju'>
                             <p id='gzs'>1</p>
-                            <p id='fss'>100</p>
-                            <p id='xms'>100</p>
+                            <p id='fss'>0</p>
+                            <p id='xms'>0</p>
                         </div>
                         <div id='txt'>
                             <p id='gz'>关注</p>
