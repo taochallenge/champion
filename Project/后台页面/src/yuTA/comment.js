@@ -22,6 +22,7 @@ const Comment = (props) => {
                     <th>评论编号</th>
                     <th>评论内容</th>
                     <th>评论时间</th>
+                    <th>评论人</th>
                     <th>操作</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@ const Comment = (props) => {
                                 <td>{data.id}</td>
                                 <td>{data.content}</td>
                                 <td>{data.time}</td>
+                                <td>{data.myname}</td>
                                 <td>
                                     <img src={require('../imgs/sc.png')} alt=''  onClick={deleteComment.bind(this, data.id)}></img>
                                 </td>

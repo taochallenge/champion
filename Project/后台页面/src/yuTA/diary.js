@@ -39,7 +39,7 @@ const Diary = (props) => {
                                 {/* <td>{data.imgpath}</td>
                                 <td>{data.videopath}</td> */}
                                 <td>{data.time}</td>
-                                <td>{data.uid}</td>
+                                <td>{data.myname}</td>
                                 <td>
                                     {
                                         props.routes.map((route, i) => (

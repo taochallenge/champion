@@ -23,7 +23,7 @@ const Memory = (props) => {
                     <th>纪念日编号</th>
                     <th>纪念日名字</th>
                     <th>纪念日时间</th>
-                    <th>纪念日倒计时</th>
+                    <th>纪念日创作者</th>
                     <th>操作</th>
                 </tr>
             </thead>
@@ -35,7 +35,7 @@ const Memory = (props) => {
                                 <td>{data.id}</td>
                                 <td>{data.name}</td>
                                 <td>{data.time}</td>
-                                <td>{data.countdown}</td>
+                                <td>{data.myname}</td>
                                 <td>
                                     {
                                         props.routes.map((route, i) => (

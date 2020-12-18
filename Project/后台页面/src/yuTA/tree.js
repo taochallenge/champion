@@ -23,7 +23,7 @@ const Tree = (props) => {
                     <th>种树编号</th>
                     <th>种树内容</th>
                     <th>种树图片路径</th>
-                    <th>相恋天数</th>
+                    {/* <th>相恋天数</th> */}
                     <th>种树创作者</th>
                     <th>操作</th>
                 </tr>
@@ -36,7 +36,7 @@ const Tree = (props) => {
                                 <td>{data.id}</td>
                                 <td>{data.content}</td>
                                 <td>{data.treeimg}</td>
-                                <td>{data.countday}</td>
+                                {/* <td>{data.countday}</td> */}
                                 <td>{data.myname}</td>
                                 <td>
                                     {

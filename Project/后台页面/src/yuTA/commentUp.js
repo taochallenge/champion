@@ -24,9 +24,9 @@ class CommentUp extends Component {
       id: e.target.value
     })
   }
-  AddMyname = (e) => {
+  AddUid = (e) => {
     this.setState({
-      myname: e.target.value
+      uid: e.target.value
     })
   }
   AddContent = (e) => {
@@ -58,7 +58,7 @@ class CommentUp extends Component {
           </div>
           <div className='UsersupInp'>
             <p>评论创作者:</p>
-            <input type="text" value={this.state.myname} onChange={this.AddMyname}  placeholder="请输入评论创作者" />
+            <input type="number" value={this.state.uid} onChange={this.AddUid}  placeholder="请输入评论创作者" />
           </div>
           <div className='UsersupB'><input type='submit' /></div>
           <div className='UsersupB'><input type='button' value='取消'

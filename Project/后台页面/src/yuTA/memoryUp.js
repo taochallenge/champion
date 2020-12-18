@@ -34,9 +34,9 @@ class MemoryUp extends Component {
       time: e.target.value
     })
   }
-  AddCountdown = (e) => {
+  AddUid = (e) => {
     this.setState({
-      countdown: e.target.value
+      uid: e.target.value
     })
   }
   render() {
@@ -57,8 +57,8 @@ class MemoryUp extends Component {
           <input type='datetime' value={this.state.time} onChange={this.AddTime} placeholder='请输入纪念日时间' />
         </div>
         <div className='UsersupInp'>
-          <p>纪念日倒计时:</p>
-          <input type='text' value={this.state.countdown} onChange={this.AddCountdown} placeholder='请输入纪念日倒计时' />
+          <p>纪念日创作者:</p>
+          <input type='number' value={this.state.uid} onChange={this.AddUid} placeholder='请输入纪念日创作者' />
         </div>
         <div className='UsersupB'><input type='submit' /></div>
         <div className='UsersupB'><input type='button' value='取消'

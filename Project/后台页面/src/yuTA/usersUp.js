@@ -1,11 +1,15 @@
 import React from 'react'
 import { Component } from 'react';
 import './usersUp.css'
-
+import { ImagePicker } from 'antd-mobile'
+import { timers } from 'jquery';
+const data = []
 class UsersUp extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      files: data
+    };
   }
   AddSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +18,16 @@ class UsersUp extends Component {
       headers: {
         'content-type': 'text/plain'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({
+        url:this.state.url,
+        filename:this.state.filename,
+        myname:this.state.myname,
+        sex:this.state.sex,
+        birthday:this.state.birthday,
+        secret:this.state.secret,
+        tel:this.state.tel,
+        password:this.state.password
+      })
     })
     await this.props.history.push('/home/users')
     await this.props.history.go(0)
@@ -22,11 +35,6 @@ class UsersUp extends Component {
   AddSex = (e) => {
     this.setState({
       sex: e.target.value
-    })
-  }
-  AddId = (e) => {
-    this.setState({
-      id: e.target.value
     })
   }
   AddImgpath = (e) => {
@@ -70,22 +78,36 @@ class UsersUp extends Component {
       tel: e.target.value
     })
   }
+  onChange = (files, type, index) => {
+    console.log(files, type, index);
+    let date = new Date()
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let hour = date.getHours()
+    let minute = date.getMinutes()
+    let second = date.getSeconds()
+    this.setState({
+        files,
+        url: files[0].url,
+        filename: '' + year + month + day + hour + minute + second + '.jpg'
+    });
+};
   render() {
+    const { files } = this.state;
     return (
       <div id='UsersupDiv'>
         <div className='Usersuphead'><p>遇TA后台管理系统</p></div>
         <form onSubmit={this.AddSubmit} className='Usersupmain'>
           <div className='UsersupInp'>
-            <p>用户编号:</p>
-            <input type='number' value={this.state.id} onChange={this.AddId} placeholder='请输入用户编号' />
-          </div>
-          <div className='UsersupInp'>
             <p>用户头像:</p>
-            <input type='text' value={this.state.imgpath} onChange={this.AddImgpath} placeholder='请输入用户头像' />
-          </div>
-          <div className='UsersupInp'>
-            <p>另一半编号:</p>
-            <input type='number' value={this.state.herid} onChange={this.AddHerid} placeholder='请输入另一半编号' />
+            <ImagePicker className='pho'
+              files={files}
+              onChange={this.onChange}
+              selectable={files.length < 1}
+              disableDelete={true}
+              style={{ width: '100%' }}
+            />
           </div>
           <div className='UsersupInp'>
             <p>用户昵称:</p>
@@ -98,10 +120,6 @@ class UsersUp extends Component {
           <div className='UsersupInp'>
             <p>用户生日:</p>
             <input type='date' value={this.state.birthday} onChange={this.AddBirthday} placeholder='请输入用户生日' />
-          </div>
-          <div className='UsersupInp'>
-            <p>相恋日期:</p>
-            <input type='date' value={this.state.lovedata} onChange={this.AddLovedata} placeholder='请输入相恋日期' />
           </div>
           <div className='UsersupInp'>
             <p>配对码:</p>

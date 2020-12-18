@@ -42,7 +42,7 @@ const Users = (props) => {
                                 <td><img src={data.imgpath} className='UsersImg'/></td>
                                 <td>{data.herid}</td>
                                 <td>{data.myname}</td>
-                                <td>{data.sex == 1 ? '女' : '男'}</td>
+                                <td>{data.sex}</td>
                                 <td>{data.birthday}</td>
                                 <td>{data.lovedata}</td>
                                 <td>{data.secret}</td>
