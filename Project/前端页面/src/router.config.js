@@ -34,7 +34,6 @@ import Little from './index/Little';
 
 
 
-import Photo from './index/Photo';
 
 const routes = [
     // 登录模块
@@ -124,11 +123,6 @@ const routes = [
         path: '/jinian',
         component: Jinian,
         pri: true,
-    },
-    {
-        path:'/photo',
-        component:Photo,
-        pri:true,
     },
     {
         path:'/create',

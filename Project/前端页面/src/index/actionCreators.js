@@ -75,23 +75,4 @@ const getMemory = (id,herid) => {
         })
     }
 }
-const getPhoto = (id,herid) => {
-    return (dispatch) => {
-        let url = '/photo';
-        fetch(url, {
-            method: 'POST',
-            body:JSON.stringify({
-                id:id,
-                herid:herid
-            })
-        })
-        .then(res => res.json())
-        .then(res => {
-            dispatch({
-                type: 'GETPHOTO',
-                photo: res
-            })
-        })
-    }
-}
-export {getDiary,getLittle,getWords,getMemory,getPhoto}
+export {getDiary,getLittle,getWords,getMemory}
